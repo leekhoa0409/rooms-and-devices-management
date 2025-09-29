@@ -1,0 +1,9 @@
+C:\Users\LeeKhoa\Desktop\DBMS_QuanLiThuVien_Nhom16\DoAnQuanLiThuVien_Nhom16\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\LeeKhoa\Desktop\DBMS_QuanLiThuVien_Nhom16\DoAnQuanLiThuVien_Nhom16\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\LeeKhoa\Desktop\DBMS_QuanLiThuVien_Nhom16\DoAnQuanLiThuVien_Nhom16\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\LeeKhoa\Desktop\DBMS_QuanLiThuVien_Nhom16\DoAnQuanLiThuVien_Nhom16\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\LeeKhoa\Desktop\DBMS_QuanLiThuVien_Nhom16\DoAnQuanLiThuVien_Nhom16\DataAccessLayer\obj\Debug\DataAccessLayer.Properties.Resources.resources
+C:\Users\LeeKhoa\Desktop\DBMS_QuanLiThuVien_Nhom16\DoAnQuanLiThuVien_Nhom16\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
+C:\Users\LeeKhoa\Desktop\DBMS_QuanLiThuVien_Nhom16\DoAnQuanLiThuVien_Nhom16\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\LeeKhoa\Desktop\DBMS_QuanLiThuVien_Nhom16\DoAnQuanLiThuVien_Nhom16\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\LeeKhoa\Desktop\DBMS_QuanLiThuVien_Nhom16\DoAnQuanLiThuVien_Nhom16\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
