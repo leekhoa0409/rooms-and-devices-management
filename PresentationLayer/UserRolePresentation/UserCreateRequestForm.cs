@@ -35,7 +35,7 @@ namespace PresentationLayer.UserRolePresentation
 
         private void btnTaoMoiPhong_Click(object sender, EventArgs e)
         {   
-            CreateWarrantyRequest f = new CreateWarrantyRequest("room");
+            CreateWarrantyRequest f = new CreateWarrantyRequest();
             f.ShowDialog();
             if (f.DialogResult == DialogResult.OK)
             {
@@ -45,7 +45,7 @@ namespace PresentationLayer.UserRolePresentation
 
         private void btnTaoMoiTB_Click(object sender, EventArgs e)
         {
-            CreateWarrantyRequest f = new CreateWarrantyRequest("device");
+            CreateWarrantyRequest f = new CreateWarrantyRequest();
             f.ShowDialog();
             if (f.DialogResult == DialogResult.OK)
             {

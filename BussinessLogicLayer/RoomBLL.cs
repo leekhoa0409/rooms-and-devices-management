@@ -57,5 +57,14 @@ namespace BussinessLogicLayer
         {
             return roomDAL.GetAllRoomAndDevice();
         }
+        public DataTable GetDevicesByRoomId(string maPhong, string tinhTrang)
+        {
+            return roomDAL.GetDevicesByRoomId(maPhong, tinhTrang);
+        }
+
+        public int GetCountRooms()
+        {
+            return roomDAL.GetCountRooms();
+        }
     }
 }

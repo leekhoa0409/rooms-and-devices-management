@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using BussinessLogicLayer;
 using DataAccessLayer;
+using PresentationLayer.AccoutPresentation;
 using PresentationLayer.MainComponentPresentation;
 using PresentationLayer.UserRolePresentation;
 namespace PresentationLayer
@@ -20,7 +21,7 @@ namespace PresentationLayer
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (Session.currentRole == "user")
+            if (Session.currentRole == "UserRole")
             {
                 // Ẩn các nút chỉ dành cho admin
                 btnDB.Visible = false;
@@ -31,7 +32,7 @@ namespace PresentationLayer
                 // Chỉ hiện nút tạo yêu cầu bảo trì
                 btnTYCBT.Visible = true;
             }
-            else if (Session.currentRole == "admin")
+            else if (Session.currentRole == "AdminRole")
             {
                 LoadForm(new DashboardForm(this));
                 btnDB.Visible = true;
@@ -84,7 +85,7 @@ namespace PresentationLayer
 
         private void btnTK_Click(object sender, EventArgs e)
         {
-
+            LoadForm(new AccountManagement());
         }
 
         private void btnTYCBT_Click(object sender, EventArgs e)

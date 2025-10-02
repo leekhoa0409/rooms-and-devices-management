@@ -57,7 +57,17 @@ namespace PresentationLayer
             string maTB = cboThietBi.SelectedValue.ToString();
             string tenPhong = cboPhong.Text.ToString();
             string tenThietBi = cboThietBi.Text.ToString();
-            int soLuong = int.Parse(txtSoLuong.Text);
+            string soLuongValue = txtSoLuong.Text;
+            int soLuong;
+            if (!string.IsNullOrEmpty(soLuongValue))
+            {
+                soLuong = int.Parse(txtSoLuong.Text);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập số lượng trước khi thêm!");
+                return;
+            }
             string error = "";
 
             DialogResult dr = MessageBox.Show(
@@ -117,7 +127,17 @@ namespace PresentationLayer
             string maTB = cboThietBi.SelectedValue.ToString();
             string tenPhong = cboPhong.Text.ToString();
             string tenThietBi = cboThietBi.Text.ToString();
-            int soLuong = int.Parse(txtSoLuong.Text);
+            string soLuongValue = txtSoLuong.Text;
+            int soLuong;
+            if (!string.IsNullOrEmpty(soLuongValue))
+            {
+                soLuong = int.Parse(txtSoLuong.Text);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập số lượng trước khi cập nhật!");
+                return;
+            }
             string error = "";
 
             DialogResult dr = MessageBox.Show(
@@ -141,6 +161,22 @@ namespace PresentationLayer
                 }
             }
         }
+        private void BtnHover_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.BackColor = System.Drawing.Color.FromArgb(41, 128, 185); // xanh
+                btn.ForeColor = System.Drawing.Color.White; // chữ trắng
+            }
+        }
 
+        private void BtnHover_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.BackColor = System.Drawing.Color.White; // nền trắng
+                btn.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185); // chữ xanh
+            }
+        }
     }
 }

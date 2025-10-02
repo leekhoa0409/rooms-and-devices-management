@@ -11,19 +11,19 @@ namespace DataAccessLayer
 {
     public class UtilDAL
     {
-        //public string strConnect = @"Data Source=DESKTOP-0K8V9HG;Initial Catalog=QLThuVien;Integrated Security=True;TrustServerCertificate=True";
+        private readonly string strConnect = @"Data Source=DESKTOP-0K8V9HG;Initial Catalog=QLThuVien;Integrated Security=True;TrustServerCertificate=True";
         public UtilDAL() { }
 
         public string CreateConnectionString(string username, string passwd)
         {
             return $"Server=DESKTOP-0K8V9HG;Database=QLThuVien;User Id={username};Password={passwd}";
-            //return @"Data Source=DESKTOP-0K8V9HG;Initial Catalog=QLThuVien;Integrated Security=True;TrustServerCertificate=True";
         }
         // Lấy dữ liệu dạng DataTable (SELECT)
         public DataTable ExecuteQueryDataTable(string strSql, CommandType ct, params SqlParameter[] parameters)
         {
             try
             {
+                if (DBHelper.strConnect == null) DBHelper.strConnect = strConnect;
                 using (SqlConnection conn = new SqlConnection(DBHelper.strConnect))
                 using (SqlCommand cmd = new SqlCommand(strSql, conn))
                 using (SqlDataAdapter adp = new SqlDataAdapter(cmd))
@@ -40,7 +40,7 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi lấy dữ liệu: " + ex.Message);
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
                 return null;
             }
         }
@@ -51,6 +51,7 @@ namespace DataAccessLayer
         {
             try
             {
+                if (DBHelper.strConnect == null) DBHelper.strConnect = strConnect;
                 using (SqlConnection conn = new SqlConnection(DBHelper.strConnect))
                 using (SqlCommand cmd = new SqlCommand(strSql, conn))
                 {
@@ -75,6 +76,7 @@ namespace DataAccessLayer
         {
             try
             {
+                if (DBHelper.strConnect == null) DBHelper.strConnect = strConnect;
                 using (SqlConnection conn = new SqlConnection(DBHelper.strConnect))
                 using (SqlCommand cmd = new SqlCommand(strSql, conn))
                 {

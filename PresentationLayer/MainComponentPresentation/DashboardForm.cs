@@ -117,5 +117,18 @@ namespace PresentationLayer
                 mainForm.LoadForm(new DashboardFormPage2(mainForm));
             }
         }
+        private void btnPage_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = System.Drawing.Color.FromArgb(41, 128, 185);
+            btn.ForeColor = System.Drawing.Color.White;
+        }
+
+        private void btnPage_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = System.Drawing.Color.White;
+            btn.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
+        }
     }
 }

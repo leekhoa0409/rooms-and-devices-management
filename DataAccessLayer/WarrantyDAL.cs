@@ -64,11 +64,11 @@ namespace DataAccessLayer
         }
         public DataTable FilterRequestsByStatus(string status)
         {
-            CommandType ct = CommandType.StoredProcedure;
+            CommandType ct = CommandType.Text;
             SqlParameter[] parameters = {
                 new SqlParameter("@TrangThai", status)
             };  
-            return dal.ExecuteQueryDataTable("sp_LocYeuCauBaoTriTheoTrangThai", ct, parameters);
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LocYeuCauBaoTriTheoTrangThai(@TrangThai);", ct, parameters);
         }
         public bool UpdateWarrantyInfo(string maBaoTri, DateTime? ngayBaoTri, int? chiPhi, string donViThucHien, string trangThai, ref string error)
         {

@@ -58,44 +58,64 @@ namespace DataAccessLayer
 
         public DataTable GetRoomById(string ma)
         {
-            CommandType ct =  CommandType.StoredProcedure;
+            CommandType ct =  CommandType.Text;
             SqlParameter[] parameters = {
                 new SqlParameter("@MaPhong", ma)
             };
-            return dal.ExecuteQueryDataTable("sp_LayPhongQuaMaPhong", ct, parameters);
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LayPhongQuaMaPhong(@MaPhong)", ct, parameters);
         }
 
         public DataTable FindRoom(string keyword)
         {
-            CommandType ct = CommandType.StoredProcedure;
+            CommandType ct = CommandType.Text;
             SqlParameter[] parameters = {
                 new SqlParameter("@Keyword", keyword)
             };
-            return dal.ExecuteQueryDataTable("sp_TimPhong", ct, parameters);
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_TimPhong(@Keyword)", ct, parameters);
         }
 
         public DataTable FilterRoom(string loaiPhong, string tinhTrang)
         {
-            CommandType ct = CommandType.StoredProcedure;
+            CommandType ct = CommandType.Text;
             SqlParameter[] parameters = {
-                new SqlParameter("@LoaiPhong", loaiPhong),
-                new SqlParameter("@TinhTrang", tinhTrang)
+                new SqlParameter("@LoaiPhong", (object)loaiPhong ?? DBNull.Value),
+                new SqlParameter("@TinhTrang", (object)tinhTrang ?? DBNull.Value)
             };
-            return dal.ExecuteQueryDataTable("sp_LocPhong", ct, parameters);
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LocPhong(@LoaiPhong, @TinhTrang);", ct, parameters);
         }
         public DataTable FilterRoomByStatus(string tinhTrang)
         {
-            CommandType ct = CommandType.StoredProcedure;
+            CommandType ct = CommandType.Text;
             SqlParameter[] parameters = {
                 new SqlParameter("@TinhTrang", tinhTrang)
             };
-            return dal.ExecuteQueryDataTable("sp_LocPhongTheoTinhTrang", ct, parameters);
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LocPhongTheoTinhTrang(@TinhTrang);", ct, parameters);
         }
 
         public DataTable GetAllRoomAndDevice()
         {
             CommandType ct = CommandType.Text;
             return dal.ExecuteQueryDataTable("SELECT * FROM v_ThongTinChiTietPhongThietBi", ct);
+        }
+        public DataTable GetDevicesByRoomId(string maPhong, string tinhTrang)
+        {
+            CommandType ct = CommandType.Text;
+            SqlParameter[] parameters = {
+                new SqlParameter("@MaPhong", maPhong),
+                new SqlParameter("@TinhTrang", (object)tinhTrang ?? DBNull.Value)
+            };
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LayCacThietBiQuaPhong(@MaPhong, @TinhTrang);", ct, parameters);
+        }
+
+        public int GetCountRooms()
+        {
+            CommandType ct = CommandType.Text;
+            object result = dal.ExecuteScalar("SELECT dbo.fn_DemSoPhong();", ct);
+
+            if (result == null || result == DBNull.Value)
+                return 0;
+
+            return Convert.ToInt32(result);
         }
     }
 }

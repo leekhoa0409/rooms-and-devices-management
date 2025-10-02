@@ -35,95 +35,115 @@
             this.lbLogin = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.ckbHienMK = new System.Windows.Forms.CheckBox();
+            this.llbTaoTK = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
-            this.lbUsername.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsername.Location = new System.Drawing.Point(127, 94);
+            this.lbUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lbUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbUsername.Location = new System.Drawing.Point(100, 100);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(119, 18);
+            this.lbUsername.Size = new System.Drawing.Size(111, 21);
             this.lbUsername.TabIndex = 1;
-            this.lbUsername.Text = "Tên người dùng";
+            this.lbUsername.Text = "Tên đăng nhập";
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.Location = new System.Drawing.Point(127, 157);
+            this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbPassword.Location = new System.Drawing.Point(100, 165);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(71, 18);
-            this.lbPassword.TabIndex = 2;
+            this.lbPassword.Size = new System.Drawing.Size(75, 21);
+            this.lbPassword.TabIndex = 3;
             this.lbPassword.Text = "Mật khẩu";
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(130, 115);
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtUsername.Location = new System.Drawing.Point(100, 125);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(268, 26);
-            this.txtUsername.TabIndex = 3;
+            this.txtUsername.Size = new System.Drawing.Size(300, 29);
+            this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(130, 178);
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtPassword.Location = new System.Drawing.Point(100, 190);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.ShortcutsEnabled = false;
-            this.txtPassword.Size = new System.Drawing.Size(268, 26);
+            this.txtPassword.Size = new System.Drawing.Size(300, 29);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lbLogin
             // 
-            this.lbLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLogin.AutoSize = true;
-            this.lbLogin.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLogin.Location = new System.Drawing.Point(148, 26);
+            this.lbLogin.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
+            this.lbLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.lbLogin.Location = new System.Drawing.Point(160, 30);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(224, 41);
-            this.lbLogin.TabIndex = 5;
-            this.lbLogin.Text = "ĐĂNG NHẬP";
-            this.lbLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbLogin.Size = new System.Drawing.Size(178, 41);
+            this.lbLogin.TabIndex = 0;
+            this.lbLogin.Text = "Đăng Nhập";
             // 
             // btnLogin
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(191, 232);
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(175, 270);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(137, 37);
+            this.btnLogin.Size = new System.Drawing.Size(150, 40);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // ckbHienMK
             // 
             this.ckbHienMK.AutoSize = true;
-            this.ckbHienMK.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbHienMK.Location = new System.Drawing.Point(130, 210);
+            this.ckbHienMK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ckbHienMK.ForeColor = System.Drawing.Color.DimGray;
+            this.ckbHienMK.Location = new System.Drawing.Point(100, 225);
             this.ckbHienMK.Name = "ckbHienMK";
-            this.ckbHienMK.Size = new System.Drawing.Size(106, 19);
-            this.ckbHienMK.TabIndex = 7;
+            this.ckbHienMK.Size = new System.Drawing.Size(104, 19);
+            this.ckbHienMK.TabIndex = 5;
             this.ckbHienMK.Text = "Hiện mật khẩu";
-            this.ckbHienMK.UseVisualStyleBackColor = true;
             this.ckbHienMK.CheckedChanged += new System.EventHandler(this.ckbHienMK_CheckedChanged);
+            // 
+            // llbTaoTK
+            // 
+            this.llbTaoTK.AutoSize = true;
+            this.llbTaoTK.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llbTaoTK.Location = new System.Drawing.Point(281, 227);
+            this.llbTaoTK.Name = "llbTaoTK";
+            this.llbTaoTK.Size = new System.Drawing.Size(119, 17);
+            this.llbTaoTK.TabIndex = 7;
+            this.llbTaoTK.TabStop = true;
+            this.llbTaoTK.Text = "Chưa có tài khoản?";
+            this.llbTaoTK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbTaoTK_LinkClicked);
+            this.llbTaoTK.Click += new System.EventHandler(this.llbTaoTK_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 311);
-            this.Controls.Add(this.ckbHienMK);
-            this.Controls.Add(this.btnLogin);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(500, 350);
+            this.Controls.Add(this.llbTaoTK);
             this.Controls.Add(this.lbLogin);
-            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lbUsername);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.lbUsername);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.ckbHienMK);
+            this.Controls.Add(this.btnLogin);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -142,5 +162,6 @@
         private System.Windows.Forms.Label lbLogin;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.CheckBox ckbHienMK;
+        private System.Windows.Forms.LinkLabel llbTaoTK;
     }
 }

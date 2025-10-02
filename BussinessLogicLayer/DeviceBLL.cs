@@ -62,5 +62,10 @@ namespace BussinessLogicLayer
         {
             return deviceDAL.FilterDeviceByStatus(tinhTrang);
         }
+
+        public int GetCountDevices()
+        {
+            return deviceDAL.GetCountDevices();
+        }
     }
 }

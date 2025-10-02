@@ -40,6 +40,11 @@ namespace PresentationLayer
             cboThietBi.ValueMember = "MaTB";
             cboThietBi.SelectedIndex = -1;
             cboLocTrangThai.SelectedIndex = 0;
+            if (dgvYeuCauBaoTri.Rows.Count == 0)
+            {
+                btnTuChoi.Enabled = false;
+                btnPheDuyet.Enabled = false;
+            }
         }
         private void LoadRoomWarranty()
         {
@@ -162,31 +167,6 @@ namespace PresentationLayer
                 LoadRequestWarranty();
             }
         }
-
-        private void cboPhong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboPhong.SelectedIndex >= 0)
-            {
-                cboThietBi.Enabled = false;
-            }
-            else
-            {
-                cboThietBi.Enabled = true;
-            }
-        }
-
-        private void cboThietBi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboThietBi.SelectedIndex >= 0)
-            {
-                cboPhong.Enabled = false;
-            }
-            else
-            {
-                cboPhong.Enabled = true;
-            }
-        }
-
         private void btnTuChoi_Click(object sender, EventArgs e)
         {
             string maYC = dgvYeuCauBaoTri.CurrentRow.Cells["MaYC"].Value.ToString();
@@ -269,7 +249,6 @@ namespace PresentationLayer
                 }
             }
         }
-
 
         private void btnSuaYeuCau_Click(object sender, EventArgs e)
         {
@@ -501,6 +480,23 @@ namespace PresentationLayer
             dtpNgayBaoTri.CustomFormat = " ";
             cboTrangThaiTB.SelectedIndex = -1;
             txtDVTHTB.Text = null; 
+        }
+        private void BtnHover_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.BackColor = System.Drawing.Color.FromArgb(41, 128, 185); // xanh
+                btn.ForeColor = System.Drawing.Color.White; // chữ trắng
+            }
+        }
+
+        private void BtnHover_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.BackColor = System.Drawing.Color.White; // nền trắng
+                btn.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185); // chữ xanh
+            }
         }
     }
 }

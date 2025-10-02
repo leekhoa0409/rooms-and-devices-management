@@ -23,8 +23,7 @@ namespace PresentationLayer
             this.maPhong = maPhong;
             roomBLL = new RoomBLL();
         }
-
-        private void RoomInsertUpdate_Load(object sender, EventArgs e)
+        private void RoomInsertUpdateForm_Load(object sender, EventArgs e)
         {
             if (maPhong != "")
             {
@@ -38,45 +37,6 @@ namespace PresentationLayer
                 }
             }
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            string error = "";
-            bool result = false;
-            if (mode == "add")
-            {
-                result = roomBLL.InsertRoom(
-                    txtTenPhong.Text, cboLoaiPhong.Text,
-                    int.Parse(txtSucChua.Text), cboTinhTrang.Text,
-                    ref error
-                );
-            }
-            else if (mode == "edit")
-            {
-                result = roomBLL.UpdateRoom(
-                    maPhong, txtTenPhong.Text, cboLoaiPhong.Text,
-                    int.Parse(txtSucChua.Text), cboTinhTrang.Text,
-                    ref error
-                );
-            }
-
-            if (result)
-            {
-                MessageBox.Show("Lưu thành công!");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Lỗi: " + error);
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             string error = "";
@@ -110,7 +70,6 @@ namespace PresentationLayer
                 MessageBox.Show("Lỗi: " + error);
             }
         }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show($"Bạn có chắc chắn muốn hủy thao tác không?",

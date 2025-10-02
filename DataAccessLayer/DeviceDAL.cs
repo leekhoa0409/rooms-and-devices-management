@@ -53,29 +53,30 @@ namespace DataAccessLayer
         }
         public DataTable FindDevice(string keyword)
         {
-            CommandType ct = CommandType.StoredProcedure;
+            CommandType ct = CommandType.Text;
             SqlParameter[] parameters = {
                 new SqlParameter("@Keyword", keyword)
             };
-            return dal.ExecuteQueryDataTable("sp_TimThietBi", ct, parameters);
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_TimThietBi(@Keyword);", ct, parameters);
         }
         public DataTable GetDeviceById(string ma)
         {
-            CommandType ct = CommandType.StoredProcedure;
+            CommandType ct = CommandType.Text;
             SqlParameter[] parameters = {
                 new SqlParameter("@MaTB", ma)
             };
-            return dal.ExecuteQueryDataTable("sp_LayThietBiQuaMaThietBi", ct, parameters);
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LayThietBiQuaMaThietBi(@MaTB);", ct, parameters);
         }
         public DataTable FilterDevice(DateTime fromDate, DateTime toDate, string tinhTrang)
         {
-            CommandType ct = CommandType.StoredProcedure;
+            if (tinhTrang == "Tất cả") tinhTrang = null;
+            CommandType ct = CommandType.Text;
             SqlParameter[] parameters = {
                 new SqlParameter("@FromDate", fromDate),
                 new SqlParameter("@ToDate", toDate),
-                new SqlParameter("@TinhTrang", tinhTrang)
+                new SqlParameter("@TinhTrang", (object)tinhTrang ?? DBNull.Value)
             };
-            return dal.ExecuteQueryDataTable("sp_LocThietBi", ct, parameters);
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LocThietBi(@FromDate, @ToDate, @TinhTrang);", ct, parameters);
         }
 
         public DataTable GetRoomAndDevice()
@@ -114,11 +115,22 @@ namespace DataAccessLayer
         }
         public DataTable FilterDeviceByStatus(string tinhTrang)
         {
-            CommandType ct = CommandType.StoredProcedure;
+            CommandType ct = CommandType.Text;
             SqlParameter[] parameters = {
                 new SqlParameter("@TinhTrang", tinhTrang)
             };
-            return dal.ExecuteQueryDataTable("sp_LocThietBiTheoTinhTrang", ct, parameters);
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LocThietBiTheoTinhTrang(@TinhTrang);", ct, parameters);
         }
+        public int GetCountDevices()
+        {
+            CommandType ct = CommandType.Text;
+            object result = dal.ExecuteScalar("SELECT dbo.fn_DemSoThietBi();", ct);
+
+            if (result == null || result == DBNull.Value)
+                return 0;
+
+            return Convert.ToInt32(result);
+        }
+
     }
 }

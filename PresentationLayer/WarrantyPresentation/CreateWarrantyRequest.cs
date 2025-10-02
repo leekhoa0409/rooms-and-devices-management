@@ -17,39 +17,25 @@ namespace PresentationLayer
     public partial class CreateWarrantyRequest : Form
     {   
         private WarrantyBLL warrantyBLL;
-        private string option;
-        public CreateWarrantyRequest(string option = null)
+        public CreateWarrantyRequest()
         {
             InitializeComponent();
             warrantyBLL = new WarrantyBLL();
-            this.option = option;
         }
 
         private void CreateWarrantyRequest_Load(object sender, EventArgs e)
         {
-            if (option == "room")
-            {
-                cboThietBi.Enabled = false;
-                cboThietBi.Visible = false;
-                lbTB.Visible = false;
-            }
-            else if (option == "device")
-            {
-                cboPhong.Enabled = false;
-                cboPhong.Visible = false;
-                lbPhong.Visible = false;
-            }
             txtTaiKhoan.Text = Session.currentUser;
-            cboTrangThai.SelectedIndex = 3;
+            cboTinhTrang.SelectedIndex = 3;
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             string tenTK = txtTaiKhoan.Text;
-            string noiDung = txtNoiDung.Text;
+            string noiDung = null;
+            if (!string.IsNullOrEmpty(txtNoiDung.Text)) noiDung = txtNoiDung.Text;
+
             DateTime ngayYC = dtpNgayYC.Value;
 
-            // Lấy mã phòng (có thể null)
             string maPhongStr = null;
             object maPhongValue = cboPhong.SelectedValue;
             if (maPhongValue != null && maPhongValue != DBNull.Value)
@@ -57,7 +43,6 @@ namespace PresentationLayer
                 maPhongStr = maPhongValue.ToString();
             }
 
-            // Lấy mã thiết bị (có thể null)
             string maTBStr = null;
             if (cboThietBi.SelectedValue != null && cboThietBi.SelectedValue != DBNull.Value)
             {
@@ -77,7 +62,6 @@ namespace PresentationLayer
                 MessageBox.Show("Lỗi tạo mới yêu cầu: " + error);
             }
         }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -90,25 +74,47 @@ namespace PresentationLayer
                 this.Close();
             }
         }
-
-        private void cboTrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string trangThai = cboTrangThai.Text;
-            if (trangThai == null) return;
+            if (cboPhong.SelectedValue == null || cboPhong.SelectedValue is DataRowView) return;
+
+            string maPhong = cboPhong.SelectedValue.ToString();
+            string tinhTrang = cboTinhTrang.SelectedItem.ToString();
+            if (tinhTrang == "Tất cả") tinhTrang = null;
+            RoomBLL roomBLL = new RoomBLL();
+            DataTable dt = roomBLL.GetDevicesByRoomId(maPhong, tinhTrang);
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                cboThietBi.DataSource = dt;
+                cboThietBi.DisplayMember = "TenTB";
+                cboThietBi.ValueMember = "MaTB";
+            }
+            else
+            {
+                cboThietBi.DataSource = null;
+            }
+            cboThietBi.SelectedIndex = -1;
+        }
+
+        private void cboTinhTrang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tinhTrang = cboTinhTrang.Text;
+            if (tinhTrang == null) return;
 
             RoomBLL roomBLL = new RoomBLL();
             DeviceBLL deviceBLL = new DeviceBLL();
             DataTable dtPhong;
             DataTable dtThietBi;
-            if (trangThai == "Tất cả")
+            if (tinhTrang == "Tất cả")
             {
                 dtPhong = roomBLL.GetAllRoom();
                 dtThietBi = deviceBLL.GetAllDevices();
             }
             else
             {
-                dtPhong = roomBLL.FilterRoomByStatus(trangThai);
-                dtThietBi = deviceBLL.FilterDeviceByStatus(trangThai);
+                dtPhong = roomBLL.FilterRoomByStatus(tinhTrang);
+                dtThietBi = deviceBLL.FilterDeviceByStatus(tinhTrang);
             }
 
             cboPhong.DataSource = dtPhong;
@@ -120,22 +126,6 @@ namespace PresentationLayer
             cboThietBi.DisplayMember = "TenTB";
             cboThietBi.ValueMember = "MaTB";
             cboThietBi.SelectedIndex = -1;
-        }
-
-        private void cboPhong_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (cboPhong.SelectedIndex >= 0)
-            {
-                cboThietBi.SelectedIndex = -1;
-            }
-        }
-
-        private void cboThietBi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboThietBi.SelectedIndex >= 0)
-            {
-                cboPhong.SelectedIndex = -1;
-            }
         }
     }
 }

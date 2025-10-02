@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLogicLayer;
 using DataAccessLayer;
+using PresentationLayer.AccoutPresentation;
 namespace PresentationLayer
 {
     public partial class LoginForm : Form
@@ -30,7 +31,6 @@ namespace PresentationLayer
             DataTable dtUser = userBLL.LoginCheck(tenTK, matKhau);
             if (dtUser == null || dtUser.Rows.Count == 0)
             {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
                 return;
             }
 
@@ -84,6 +84,17 @@ namespace PresentationLayer
             {
                 txtPassword.UseSystemPasswordChar = true;
             }
+        }
+
+        private void llbTaoTK_Click(object sender, EventArgs e)
+        {
+            CreateAccountForm f = new CreateAccountForm("login");
+            f.ShowDialog();
+        }
+
+        private void llbTaoTK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

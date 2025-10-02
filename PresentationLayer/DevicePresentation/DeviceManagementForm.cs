@@ -25,6 +25,7 @@ namespace PresentationLayer
         {
             LoadDevices();
             cboTinhTrang.SelectedIndex = 0;
+            lbThietBi.Text = deviceBLL.GetCountDevices().ToString();
         }
 
         private void LoadDevices()
@@ -126,6 +127,23 @@ namespace PresentationLayer
         {
             DeviceAndRoomForm f = new DeviceAndRoomForm();
             f.Show();
+        }
+        private void BtnHover_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.BackColor = System.Drawing.Color.FromArgb(41, 128, 185); // xanh
+                btn.ForeColor = System.Drawing.Color.White; // chữ trắng
+            }
+        }
+
+        private void BtnHover_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                btn.BackColor = System.Drawing.Color.White; // nền trắng
+                btn.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185); // chữ xanh
+            }
         }
     }
 }

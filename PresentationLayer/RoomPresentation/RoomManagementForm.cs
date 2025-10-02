@@ -20,21 +20,19 @@ namespace PresentationLayer
             InitializeComponent();
             roomBLL = new RoomBLL();
         }
-
         private void RoomManagementForm_Load(object sender, EventArgs e)
         {
             LoadRoom();
             cboLoaiPhong.SelectedIndex = 0;
             cboTinhTrang.SelectedIndex = 0;
             isInitializng = false;
+            lbPhong.Text = roomBLL.GetCountRooms().ToString();
         }
-
         private void LoadRoom()
         {
             DataTable dt = roomBLL.GetAllRoom();
             dgvPhong.DataSource = dt;
         }
-
         private void btnThemPhong_Click(object sender, EventArgs e)
         {
             RoomInsertUpdateForm f = new RoomInsertUpdateForm("Add");
@@ -43,7 +41,6 @@ namespace PresentationLayer
                 LoadRoom(); // Refresh lại DataGridView
             }
         }
-
         private void btnSuaPhong_Click(object sender, EventArgs e)
         {
             if (dgvPhong.CurrentRow != null)
@@ -56,7 +53,6 @@ namespace PresentationLayer
                 }
             }
         }
-
         private void btnXoaPhong_Click(object sender, EventArgs e)
         {
 
@@ -83,7 +79,6 @@ namespace PresentationLayer
                 }
             }
         }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string keyword = txtTimPhong.Text.ToString();
@@ -123,7 +118,6 @@ namespace PresentationLayer
             DataTable dt = roomBLL.FilterRoom(loaiPhong, tinhTrang);
             dgvPhong.DataSource = dt;
         }
-
         private void cboLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (isInitializng)
@@ -132,7 +126,6 @@ namespace PresentationLayer
             }
             FilterRooms();  
         }
-
         private void cboTinhTrang_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (isInitializng)
@@ -140,6 +133,17 @@ namespace PresentationLayer
                 return;
             }
             FilterRooms();
+        }
+        private void BtnHover_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.ForeColor = Color.White; // chữ trắng khi hover
+        }
+
+        private void BtnHover_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.ForeColor = Color.FromArgb(41, 128, 185); // trở lại xanh khi rời chuột
         }
     }
 }

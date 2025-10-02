@@ -7,10 +7,10 @@ namespace BussinessLogicLayer
     {
         private UserDAL userDAL;
         private UtilDAL utilDAL;
-        public UserBLL () 
-        { 
-            userDAL = new UserDAL ();
-            utilDAL = new UtilDAL ();
+        public UserBLL()
+        {
+            userDAL = new UserDAL();
+            utilDAL = new UtilDAL();
         }
         public DataTable LoginCheck(string tenTK, string matKhau)
         {
@@ -27,6 +27,22 @@ namespace BussinessLogicLayer
         public DataTable GetCurrentRole()
         {
             return userDAL.GetCurrentRole();
+        }
+        public DataTable GetAllAccountsInfo()
+        {
+            return userDAL.GetAllAccountsInfo();
+        }
+        public bool CreateAccount(string username, string password, string role, ref string error)
+        {
+            return userDAL.CreateAccount(username, password, role, ref error);
+        }
+        public bool DeleteAccount(string username, ref string error)
+        {
+            return userDAL.DeleteAccount(username, ref error);
+        }
+        public bool UpdateAccount(string username, string password, string role, ref string error)
+        {
+            return userDAL.UpdateAccount(username, password, role, ref error);
         }
     }
 }
