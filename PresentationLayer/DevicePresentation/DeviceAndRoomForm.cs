@@ -38,6 +38,12 @@ namespace PresentationLayer
         {
             DataTable dt = deviceBLL.GetRoomAndDevice();
             dgvPhongThietBi.DataSource = dt;
+            if (dgvPhongThietBi == null && dgvPhongThietBi.Rows.Count == 0)
+            {
+                btnSuaThietBi.Enabled = false;
+                btnXoaThietBi.Enabled = false;
+                btnThemThietBi.Enabled = false;
+            }
         }
 
         private void dgvPhongThietBi_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -53,12 +59,26 @@ namespace PresentationLayer
 
         private void btnThemThietBi_Click(object sender, EventArgs e)
         {
+            if (cboPhong.SelectedValue == null || cboThietBi.SelectedValue == null)
+            {
+                return;
+            }
             string maPhong = cboPhong.SelectedValue.ToString();
             string maTB = cboThietBi.SelectedValue.ToString();
             string tenPhong = cboPhong.Text.ToString();
             string tenThietBi = cboThietBi.Text.ToString();
             string soLuongValue = txtSoLuong.Text;
             int soLuong;
+            if (string.IsNullOrEmpty(maPhong))
+            {
+                MessageBox.Show("Vui lòng chọn phòng!");
+                return;
+            }
+            if (string.IsNullOrEmpty(maTB))
+            {
+                MessageBox.Show("Vui lòng chọn thiết bị");
+                return;
+            }
             if (!string.IsNullOrEmpty(soLuongValue))
             {
                 soLuong = int.Parse(txtSoLuong.Text);
@@ -93,12 +113,25 @@ namespace PresentationLayer
         }
         private void btnXoaThietBi_Click(object sender, EventArgs e)
         {
+            if (cboPhong.SelectedValue == null || cboThietBi.SelectedValue == null)
+            {
+                return;
+            }
             string maPhong = cboPhong.SelectedValue.ToString();
             string maTB = cboThietBi.SelectedValue.ToString();
             string tenPhong = cboPhong.Text.ToString();
             string tenThietBi = cboThietBi.Text.ToString();
             string error = "";
-
+            if (string.IsNullOrEmpty(maPhong))
+            {
+                MessageBox.Show("Vui lòng chọn phòng!");
+                return;
+            }
+            if (string.IsNullOrEmpty(maTB))
+            {
+                MessageBox.Show("Vui lòng chọn thiết bị");
+                return;
+            }
             DialogResult dr = MessageBox.Show(
                 $"Bạn có chắc chắn muốn xóa thiết bị {tenThietBi} khỏi phòng {tenPhong}?",
                 "Xác nhận xóa",
@@ -123,12 +156,26 @@ namespace PresentationLayer
 
         private void btnSuaThietBi_Click(object sender, EventArgs e)
         {
+            if (cboPhong.SelectedValue == null || cboThietBi.SelectedValue == null)
+            {
+                return;
+            }
             string maPhong = cboPhong.SelectedValue.ToString();
             string maTB = cboThietBi.SelectedValue.ToString();
             string tenPhong = cboPhong.Text.ToString();
             string tenThietBi = cboThietBi.Text.ToString();
             string soLuongValue = txtSoLuong.Text;
             int soLuong;
+            if (string.IsNullOrEmpty(maPhong))
+            {
+                MessageBox.Show("Vui lòng chọn phòng!");
+                return;
+            }
+            if (string.IsNullOrEmpty(maTB))
+            {
+                MessageBox.Show("Vui lòng chọn thiết bị");
+                return;
+            }
             if (!string.IsNullOrEmpty(soLuongValue))
             {
                 soLuong = int.Parse(txtSoLuong.Text);

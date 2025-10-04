@@ -61,3 +61,5 @@ C:\Users\LeeKhoa\Desktop\rooms-and-devices-management\PresentationLayer\obj\Debu
 C:\Users\LeeKhoa\Desktop\rooms-and-devices-management\PresentationLayer\obj\Debug\PresentationLayer.exe
 C:\Users\LeeKhoa\Desktop\rooms-and-devices-management\PresentationLayer\obj\Debug\PresentationLayer.pdb
 C:\Users\LeeKhoa\Desktop\rooms-and-devices-management\PresentationLayer\obj\Debug\PresentationLayer.AccoutPresentation.CreateAccountForm.resources
+C:\Users\LeeKhoa\Desktop\rooms-and-devices-management\PresentationLayer\obj\Debug\PresentationLayer.AccoutPresentation.AccountInfoForm.resources
+C:\Users\LeeKhoa\Desktop\rooms-and-devices-management\PresentationLayer\obj\Debug\PresentationLayer.AccoutPresentation.ChangePasswordForm.resources

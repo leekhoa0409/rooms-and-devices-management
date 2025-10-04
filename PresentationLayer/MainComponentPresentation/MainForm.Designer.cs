@@ -190,6 +190,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.paneNav = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTYCBT = new System.Windows.Forms.Button();
             this.btnDB = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -198,7 +199,6 @@
             this.btnThietBi = new System.Windows.Forms.Button();
             this.btnPhong = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.paneNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -220,6 +220,18 @@
             this.paneNav.Size = new System.Drawing.Size(180, 681);
             this.paneNav.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(0, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 162);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnTYCBT
             // 
             this.btnTYCBT.BackColor = System.Drawing.Color.Transparent;
@@ -228,7 +240,7 @@
             this.btnTYCBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTYCBT.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTYCBT.ForeColor = System.Drawing.Color.White;
-            this.btnTYCBT.Location = new System.Drawing.Point(0, 200);
+            this.btnTYCBT.Location = new System.Drawing.Point(0, 351);
             this.btnTYCBT.Name = "btnTYCBT";
             this.btnTYCBT.Size = new System.Drawing.Size(180, 70);
             this.btnTYCBT.TabIndex = 6;
@@ -264,7 +276,7 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(180, 53);
             this.btnLogout.TabIndex = 4;
-            this.btnLogout.Text = "😥 Đăng xuất";
+            this.btnLogout.Text = "👉 Đăng xuất";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -345,18 +357,6 @@
             this.panelMain.Size = new System.Drawing.Size(1084, 681);
             this.panelMain.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(0, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 162);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,7 +368,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý thư viện";
+            this.Text = "Quản lý cơ sở vật chất thư viện";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.paneNav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

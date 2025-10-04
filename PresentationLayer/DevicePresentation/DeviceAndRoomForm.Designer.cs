@@ -30,9 +30,9 @@ namespace PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPhongThietBi = new System.Windows.Forms.DataGridView();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,29 +50,29 @@ namespace PresentationLayer
             // 
             this.dgvPhongThietBi.AllowUserToAddRows = false;
             this.dgvPhongThietBi.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.dgvPhongThietBi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.dgvPhongThietBi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPhongThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhongThietBi.BackgroundColor = System.Drawing.Color.White;
             this.dgvPhongThietBi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPhongThietBi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhongThietBi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhongThietBi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPhongThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhongThietBi.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhongThietBi.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPhongThietBi.EnableHeadersVisualStyles = false;
             this.dgvPhongThietBi.Location = new System.Drawing.Point(12, 21);
             this.dgvPhongThietBi.Name = "dgvPhongThietBi";
@@ -184,7 +184,7 @@ namespace PresentationLayer
             // 
             // cboPhong
             // 
-            this.cboPhong.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboPhong.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cboPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboPhong.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -197,7 +197,7 @@ namespace PresentationLayer
             // 
             // cboThietBi
             // 
-            this.cboThietBi.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboThietBi.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cboThietBi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboThietBi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboThietBi.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -226,7 +226,7 @@ namespace PresentationLayer
             this.Controls.Add(this.dgvPhongThietBi);
             this.Name = "DeviceAndRoomForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DeviceAndRoomForm";
+            this.Text = "Thông tin phòng và thiết bị";
             this.Load += new System.EventHandler(this.DeviceAndRoomForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhongThietBi)).EndInit();
             this.ResumeLayout(false);

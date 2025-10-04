@@ -48,11 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccoutPresentation\AccountInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccoutPresentation\AccountInfoForm.Designer.cs">
+      <DependentUpon>AccountInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AccoutPresentation\AccountManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AccoutPresentation\AccountManagement.Designer.cs">
       <DependentUpon>AccountManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccoutPresentation\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccoutPresentation\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AccoutPresentation\CreateAccountForm.cs">
       <SubType>Form</SubType>
@@ -145,8 +157,14 @@
     <Compile Include="WarrantyPresentation\WarrantyForm.Designer.cs">
       <DependentUpon>WarrantyForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccoutPresentation\AccountInfoForm.resx">
+      <DependentUpon>AccountInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AccoutPresentation\AccountManagement.resx">
       <DependentUpon>AccountManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccoutPresentation\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AccoutPresentation\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
@@ -220,6 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ute_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatardefault_92824.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

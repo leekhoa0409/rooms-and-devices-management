@@ -27,12 +27,12 @@ namespace PresentationLayer
                 btnDB.Visible = false;
                 btnPhong.Visible = false;
                 btnThietBi.Visible = false;
-                btnTK.Visible = false;
                 btnBT.Visible = false;
                 // Chỉ hiện nút tạo yêu cầu bảo trì
+                btnTK.Visible = true;
                 btnTYCBT.Visible = true;
             }
-            else if (Session.currentRole == "AdminRole")
+            else if (Session.currentRole == "AdminRole" || Session.currentRole == "ManagerRole")
             {
                 LoadForm(new DashboardForm(this));
                 btnDB.Visible = true;
@@ -61,6 +61,7 @@ namespace PresentationLayer
             LoginForm login = new LoginForm();
             login.ShowDialog();
             Session.Clear();
+            DBHelper.strConnect = null;
         }
 
         private void btnDB_Click(object sender, EventArgs e)
@@ -85,7 +86,8 @@ namespace PresentationLayer
 
         private void btnTK_Click(object sender, EventArgs e)
         {
-            LoadForm(new AccountManagement());
+            if (Session.currentRole == "AdminRole") LoadForm(new AccountManagement());
+            else LoadForm(new AccountInfoForm());
         }
 
         private void btnTYCBT_Click(object sender, EventArgs e)

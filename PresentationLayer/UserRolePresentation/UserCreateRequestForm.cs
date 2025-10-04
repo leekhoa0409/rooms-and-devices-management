@@ -33,30 +33,20 @@ namespace PresentationLayer.UserRolePresentation
             dgvPhong.DataSource = dt;
         }
 
-        private void btnTaoMoiPhong_Click(object sender, EventArgs e)
-        {   
-            CreateWarrantyRequest f = new CreateWarrantyRequest();
-            f.ShowDialog();
-            if (f.DialogResult == DialogResult.OK)
-            {
-
-            }
-        }
-
-        private void btnTaoMoiTB_Click(object sender, EventArgs e)
-        {
-            CreateWarrantyRequest f = new CreateWarrantyRequest();
-            f.ShowDialog();
-            if (f.DialogResult == DialogResult.OK)
-            {
-
-            }
-        }
-
         private void btnXemLai_Click(object sender, EventArgs e)
         {
             ReviewAllRequestsForm f = new ReviewAllRequestsForm();
             f.ShowDialog();
+        }
+
+        private void btnTaoMoi_Click(object sender, EventArgs e)
+        {
+            CreateWarrantyRequest f = new CreateWarrantyRequest();
+            f.ShowDialog();
+            if (f.DialogResult == DialogResult.OK)
+            {
+                LoadRoomAndDevice();
+            }
         }
     }
 }

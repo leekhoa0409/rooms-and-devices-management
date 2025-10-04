@@ -317,7 +317,7 @@ namespace PresentationLayer
             this.lbThietBi.AutoSize = true;
             this.lbThietBi.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbThietBi.ForeColor = System.Drawing.Color.Red;
-            this.lbThietBi.Location = new System.Drawing.Point(45, 51);
+            this.lbThietBi.Location = new System.Drawing.Point(48, 51);
             this.lbThietBi.Name = "lbThietBi";
             this.lbThietBi.Size = new System.Drawing.Size(42, 50);
             this.lbThietBi.TabIndex = 44;

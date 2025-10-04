@@ -140,7 +140,7 @@
             // 
             // cboLoaiTB
             // 
-            this.cboLoaiTB.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboLoaiTB.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cboLoaiTB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLoaiTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboLoaiTB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,7 +158,7 @@
             // 
             // cboTinhTrang
             // 
-            this.cboTinhTrang.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboTinhTrang.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cboTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTinhTrang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTinhTrang.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,7 +190,7 @@
             this.Controls.Add(this.label2);
             this.Name = "DeviceInsertUpdateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DeviceInsertUpdateForm";
+            this.Text = "Quản lý thiết bị trong phòng";
             this.Load += new System.EventHandler(this.DeviceInsertUpdateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

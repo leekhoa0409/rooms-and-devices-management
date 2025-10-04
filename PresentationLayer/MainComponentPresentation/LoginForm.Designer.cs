@@ -86,9 +86,9 @@
             this.lbLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.lbLogin.Location = new System.Drawing.Point(160, 30);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(178, 41);
+            this.lbLogin.Size = new System.Drawing.Size(175, 41);
             this.lbLogin.TabIndex = 0;
-            this.lbLogin.Text = "Đăng Nhập";
+            this.lbLogin.Text = "WELCOME!";
             // 
             // btnLogin
             // 

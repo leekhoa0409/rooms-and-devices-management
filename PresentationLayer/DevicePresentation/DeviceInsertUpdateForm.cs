@@ -54,7 +54,21 @@ namespace PresentationLayer
             string tinhTrang = cboTinhTrang.Text.ToString();
             string error = "";
             bool result = false;
-
+            if (string.IsNullOrEmpty(tenThietBi))
+            {
+                MessageBox.Show("Vui lòng nhập tên thiết bị!");
+                return;
+            }
+            if (string.IsNullOrEmpty(loaiThietBi))
+            {
+                MessageBox.Show("Vui lòng chọn loại thiết bị!");
+                return;
+            }
+            if (string.IsNullOrEmpty(tinhTrang))
+            {
+                MessageBox.Show("Vui lòng chọn tình trạng của thiết bị!");
+                return;
+            }
             if (mode == "add")
             {
                 result = deviceBLL.InsertDevice(tenThietBi, loaiThietBi, ngayMua, tinhTrang, ref error);

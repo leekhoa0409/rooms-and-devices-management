@@ -99,6 +99,7 @@ namespace PresentationLayer
         private void btnSuaTTBTP_Click(object sender, EventArgs e)
         {
             string maBaoTri = txtMaBaoTri.Text;
+            if (string.IsNullOrEmpty(maBaoTri)) return;
             DateTime? ngayBaoTri = null;
             if (dtpNgayBaoTri.CustomFormat != " ")
             {
@@ -253,8 +254,16 @@ namespace PresentationLayer
         private void btnSuaYeuCau_Click(object sender, EventArgs e)
         {
             string error = "";
-            string maYC = dgvYeuCauBaoTri.CurrentRow.Cells["MaYC"].Value?.ToString();
-            DateTime? ngayYC = null;
+            string maYC = null;
+            if (dgvYeuCauBaoTri != null && dgvYeuCauBaoTri.Rows.Count > 0)
+            {
+                maYC = dgvYeuCauBaoTri.CurrentRow.Cells["MaYC"].Value?.ToString();
+            }
+            else
+            {
+                return;
+            }
+                DateTime? ngayYC = null;
             if (dtpNgayYC.CustomFormat != " ")
             {
                 ngayYC = dtpNgayYC.Value;
@@ -361,6 +370,7 @@ namespace PresentationLayer
         private void btnSuaTTBTTB_Click(object sender, EventArgs e)
         {
             string maBT = txtMaBTTB.Text;
+            if (string.IsNullOrEmpty(maBT)) return;
             string maPhong = txtMaPhongTB.Text;
             string tenPhong = txtTenPhongTB.Text;
             string maTB = txtMaTB.Text;

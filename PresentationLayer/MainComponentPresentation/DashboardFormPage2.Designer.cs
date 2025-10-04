@@ -160,12 +160,12 @@
         //}
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chartBaoTri = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartChiPhiBaoTri = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -199,18 +199,18 @@
             this.chartBaoTri.BorderlineColor = System.Drawing.Color.Black;
             this.chartBaoTri.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chartBaoTri.BorderlineWidth = 2;
-            chartArea1.Name = "ChartArea1";
-            this.chartBaoTri.ChartAreas.Add(chartArea1);
+            chartArea5.Name = "ChartArea1";
+            this.chartBaoTri.ChartAreas.Add(chartArea5);
             this.chartBaoTri.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartBaoTri.Legends.Add(legend1);
+            legend5.Name = "Legend1";
+            this.chartBaoTri.Legends.Add(legend5);
             this.chartBaoTri.Location = new System.Drawing.Point(3, 3);
             this.chartBaoTri.Name = "chartBaoTri";
             this.chartBaoTri.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartBaoTri.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartBaoTri.Series.Add(series5);
             this.chartBaoTri.Size = new System.Drawing.Size(539, 514);
             this.chartBaoTri.TabIndex = 3;
             this.chartBaoTri.Text = "Tần suất bảo trì";
@@ -220,39 +220,42 @@
             this.chartChiPhiBaoTri.BorderlineColor = System.Drawing.Color.Black;
             this.chartChiPhiBaoTri.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chartChiPhiBaoTri.BorderlineWidth = 2;
-            chartArea2.Name = "ChartArea1";
-            this.chartChiPhiBaoTri.ChartAreas.Add(chartArea2);
+            chartArea6.Name = "ChartArea1";
+            this.chartChiPhiBaoTri.ChartAreas.Add(chartArea6);
             this.chartChiPhiBaoTri.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartChiPhiBaoTri.Legends.Add(legend2);
+            legend6.Name = "Legend1";
+            this.chartChiPhiBaoTri.Legends.Add(legend6);
             this.chartChiPhiBaoTri.Location = new System.Drawing.Point(548, 3);
             this.chartChiPhiBaoTri.Name = "chartChiPhiBaoTri";
             this.chartChiPhiBaoTri.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartChiPhiBaoTri.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartChiPhiBaoTri.Series.Add(series6);
             this.chartChiPhiBaoTri.Size = new System.Drawing.Size(540, 514);
             this.chartChiPhiBaoTri.TabIndex = 4;
             this.chartChiPhiBaoTri.Text = "Chi phí bảo trì";
             // 
             // cboNam
             // 
-            this.cboNam.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNam.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cboNam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboNam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNam.FormattingEnabled = true;
             this.cboNam.Location = new System.Drawing.Point(153, 541);
             this.cboNam.Name = "cboNam";
-            this.cboNam.Size = new System.Drawing.Size(180, 26);
+            this.cboNam.Size = new System.Drawing.Size(180, 25);
             this.cboNam.TabIndex = 1;
             this.cboNam.SelectedIndexChanged += new System.EventHandler(this.cboNam_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 544);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 544);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 18);
+            this.label1.Size = new System.Drawing.Size(118, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "📅 Lọc theo năm:";
             // 

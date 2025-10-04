@@ -75,5 +75,15 @@ namespace DataAccessLayer
             };
             return dal.ExecuteNonQuery("sp_SuaTaiKhoan", ct, ref error, parameters);
         }
+
+        public DataTable GetAccountInfo(string username)
+        {
+            CommandType ct = CommandType.Text;
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@TenTK", username)
+            };
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_ThongTinTaiKhoan(@TenTK);", ct, parameters);
+        }
     }
 }

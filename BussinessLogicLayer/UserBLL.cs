@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using System;
 using System.Data;
 
 namespace BussinessLogicLayer
@@ -43,6 +44,11 @@ namespace BussinessLogicLayer
         public bool UpdateAccount(string username, string password, string role, ref string error)
         {
             return userDAL.UpdateAccount(username, password, role, ref error);
+        }
+
+        public DataTable GetAccountInfo(string username)
+        {
+            return userDAL.GetAccountInfo(username);
         }
     }
 }

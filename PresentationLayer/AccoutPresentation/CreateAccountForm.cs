@@ -85,5 +85,19 @@ namespace PresentationLayer.AccoutPresentation
             }
             cboVaiTro.SelectedIndex = 2;
         }
+
+        private void ckbHienMK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbHienMK.Checked)
+            {
+                txtMatKhau.UseSystemPasswordChar = false;
+                txtNhapLaiMK.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtMatKhau.UseSystemPasswordChar = true;
+                txtNhapLaiMK.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

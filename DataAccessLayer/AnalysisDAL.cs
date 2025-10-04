@@ -17,14 +17,14 @@ namespace DataAccessLayer
         }
         public DataTable ThongKePhong()
         {
-            CommandType ct = CommandType.StoredProcedure;
-            return dal.ExecuteQueryDataTable("sp_SoLuongPhongTheoLoai", ct);
+            CommandType ct = CommandType.Text;
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_SoLuongPhongTheoLoai();", ct);
         }
 
         public DataTable ThongKeThietBi()
         {
-            CommandType ct = CommandType.StoredProcedure;
-            return dal.ExecuteQueryDataTable("sp_SoLuongThietBiTheoTinhTrang", ct);
+            CommandType ct = CommandType.Text;
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_SoLuongThietBiTheoTinhTrang();", ct);
         }
 
         public DataTable ThongKeBaoTriTheoNam(int nam)
