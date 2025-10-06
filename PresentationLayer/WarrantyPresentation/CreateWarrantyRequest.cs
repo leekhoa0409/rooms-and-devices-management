@@ -17,6 +17,7 @@ namespace PresentationLayer
     public partial class CreateWarrantyRequest : Form
     {   
         private WarrantyBLL warrantyBLL;
+        private bool isLoading = false;
         public CreateWarrantyRequest()
         {
             InitializeComponent();
@@ -81,51 +82,80 @@ namespace PresentationLayer
 
         private void cboTinhTrang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string tinhTrang = cboTinhTrang.Text.ToString();
-            RoomBLL roomBLL = new RoomBLL();
-            DeviceBLL deviceBLL = new DeviceBLL();
-            DataTable dtPhong;
-            DataTable dtThietBi;
-            if (tinhTrang == "Tất cả")
-            {
-                dtPhong = roomBLL.GetAllRoom();
-                dtThietBi = deviceBLL.GetAllDevices();
-            }
-            else
-            {
-                dtPhong = roomBLL.FilterRoomByStatus(tinhTrang);
-                dtThietBi = deviceBLL.FilterDeviceByStatus(tinhTrang);
-            }
-            cboPhong.DataSource = null;
-            cboThietBi.DataSource = null;
-            cboPhong.DataSource = dtPhong;
-            cboPhong.DisplayMember = "TenPhong";
-            cboPhong.ValueMember = "MaPhong";
-            cboPhong.SelectedIndex = -1;
+            if (isLoading) return; // tránh gọi lại sự kiện lồng nhau
+            isLoading = true;
 
-            cboThietBi.DataSource = dtThietBi;
-            cboThietBi.DisplayMember = "TenTB";
-            cboThietBi.ValueMember = "MaTB";
-            cboThietBi.SelectedIndex = -1;
+            try
+            {
+                cboPhong.DataSource = null;
+                cboThietBi.DataSource = null;
+
+                string tinhTrang = cboTinhTrang.Text.Trim();
+                RoomBLL roomBLL = new RoomBLL();
+                DeviceBLL deviceBLL = new DeviceBLL();
+
+                DataTable dtPhong;
+                DataTable dtThietBi;
+
+                if (tinhTrang == "Tất cả")
+                {
+                    dtPhong = roomBLL.GetAllRoom();
+                    dtThietBi = deviceBLL.GetAllDevices();
+                }
+                else
+                {
+                    dtPhong = roomBLL.FilterRoomByStatus(tinhTrang);
+                    dtThietBi = deviceBLL.FilterDeviceByStatus(tinhTrang);
+                }
+
+                // Gán dữ liệu phòng
+                cboPhong.DisplayMember = "TenPhong";
+                cboPhong.ValueMember = "MaPhong";
+                cboPhong.DataSource = dtPhong;
+                cboPhong.SelectedIndex = -1;
+
+                // Gán dữ liệu thiết bị
+                cboThietBi.DisplayMember = "TenTB";
+                cboThietBi.ValueMember = "MaTB";
+                cboThietBi.DataSource = dtThietBi;
+                cboThietBi.SelectedIndex = -1;
+            }
+            finally
+            {
+                isLoading = false;
+            }
         }
 
         private void cboThietBi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isLoading) return; // tránh vòng lặp đổ dữ liệu
             if (cboThietBi.SelectedValue == null || cboThietBi.SelectedValue is DataRowView) return;
+
             string maTB = cboThietBi.SelectedValue.ToString();
             DeviceBLL deviceBLL = new DeviceBLL();
+
             DataTable dt = deviceBLL.GetRoomByDeviceId(maTB);
-            if (dt != null || dt.Rows.Count > 0)
+
+            if (dt != null && dt.Rows.Count > 0)
             {
-                cboPhong.DataSource= dt;
-                cboPhong.ValueMember = "MaPhong";
-                cboPhong.DisplayMember = "TenPhong";
+                isLoading = true;
+                try
+                {
+                    cboPhong.DataSource = null;
+                    cboPhong.DisplayMember = "TenPhong";
+                    cboPhong.ValueMember = "MaPhong";
+                    cboPhong.DataSource = dt;
+                    cboPhong.SelectedIndex = 0; // Chọn phòng chứa thiết bị
+                }
+                finally
+                {
+                    isLoading = false;
+                }
             }
             else
             {
                 cboPhong.DataSource = null;
             }
-            cboPhong.SelectedIndex = -1;
         }
     }
 }
