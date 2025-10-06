@@ -132,5 +132,13 @@ namespace DataAccessLayer
             return Convert.ToInt32(result);
         }
 
+        public DataTable GetRoomByDeviceId(string maTB)
+        {
+            CommandType ct = CommandType.Text;
+            SqlParameter[] parameters = {
+                new SqlParameter("@MaTB", maTB)
+            };
+            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LayPhongQuaThietBi(@MaTB);", ct , parameters);
+        }
     }
 }

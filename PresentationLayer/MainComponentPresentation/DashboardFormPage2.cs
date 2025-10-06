@@ -27,15 +27,19 @@ namespace PresentationLayer.MainComponentPresentation
         private void DashboardFormPage2_Load(object sender, EventArgs e)
         {
             DataTable dtNam = analysisBLL.GetAllYear();
-
             if (dtNam == null || dtNam.Rows.Count == 0)
             {
                 cboNam.DataSource = null;
                 chartBaoTri.Series.Clear();
                 chartChiPhiBaoTri.Series.Clear();
+                lblThongBao.Text = "Chưa có dữ liệu thống kê";
+                tblChart.Visible = false;
+                cboNam.Visible = false;
+                lbLoc.Visible = false;
             }
             else
             {
+                lblThongBao.Text = "Thống kê số lượng bảo trì và chi phí";
                 cboNam.DataSource = dtNam;
                 cboNam.DisplayMember = "NamBT";
                 cboNam.ValueMember = "NamBT";
@@ -59,9 +63,10 @@ namespace PresentationLayer.MainComponentPresentation
                 LoadChartChiPhiBaoTriPhongTheoNam(int.Parse(cboNam.SelectedValue.ToString()));
             }
         }
-        public void LoadChartSoLuongBaoTri(int nam)
+        public bool LoadChartSoLuongBaoTri(int nam)
         {
             DataTable dt = analysisBLL.ThongKeBaoTriTheoNam(nam); // BLL thay đổi để nhận tham số năm
+            if (dt == null || dt.Rows.Count == 0) return false;
             chartBaoTri.Series.Clear();
 
             chartBaoTri.ChartAreas[0].AxisX.Title = "Tháng";
@@ -98,6 +103,7 @@ namespace PresentationLayer.MainComponentPresentation
             Legend legend = new Legend("Legend1");
             legend.Docking = Docking.Top;
             chartBaoTri.Legends.Add(legend);
+            return true;
         }
 
         private void btnPage1_Click(object sender, EventArgs e)
@@ -107,9 +113,10 @@ namespace PresentationLayer.MainComponentPresentation
                 mainForm.LoadForm(new DashboardForm(mainForm));
             }
         }
-        public void LoadChartChiPhiBaoTriPhongTheoNam(int nam)
+        public bool LoadChartChiPhiBaoTriPhongTheoNam(int nam)
         {
             DataTable dt = analysisBLL.ThongKeChiPhiBaoTriPhongTheoThangNam(nam);
+            if (dt == null || dt.Rows.Count == 0) return false;
             chartChiPhiBaoTri.Series.Clear();
 
             // Cấu hình chart
@@ -162,6 +169,7 @@ namespace PresentationLayer.MainComponentPresentation
             legend.Docking = Docking.Top;
             legend.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             chartChiPhiBaoTri.Legends.Add(legend);
+            return true;
         }
 
         private void btnPage2_Click(object sender, EventArgs e)
@@ -182,6 +190,5 @@ namespace PresentationLayer.MainComponentPresentation
             btn.BackColor = System.Drawing.Color.White;
             btn.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
         }
-
     }
 }

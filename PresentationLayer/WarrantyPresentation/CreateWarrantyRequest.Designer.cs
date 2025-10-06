@@ -207,6 +207,7 @@
             this.cboThietBi.Name = "cboThietBi";
             this.cboThietBi.Size = new System.Drawing.Size(306, 25);
             this.cboThietBi.TabIndex = 47;
+            this.cboThietBi.SelectedIndexChanged += new System.EventHandler(this.cboThietBi_SelectedIndexChanged);
             // 
             // CreateWarrantyRequest
             // 

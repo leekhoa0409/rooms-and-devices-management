@@ -26,19 +26,19 @@ namespace PresentationLayer
             cboLoaiPhong.SelectedIndex = 0;
             cboTinhTrang.SelectedIndex = 0;
             isInitializng = false;
-            lbPhong.Text = roomBLL.GetCountRooms().ToString();
         }
         private void LoadRoom()
         {
             DataTable dt = roomBLL.GetAllRoom();
             dgvPhong.DataSource = dt;
+            lbPhong.Text = roomBLL.GetCountRooms().ToString();
         }
         private void btnThemPhong_Click(object sender, EventArgs e)
         {
             RoomInsertUpdateForm f = new RoomInsertUpdateForm("Add");
             if (f.ShowDialog() == DialogResult.OK)
             {
-                LoadRoom(); // Refresh lại DataGridView
+                LoadRoom();
             }
         }
         private void btnSuaPhong_Click(object sender, EventArgs e)

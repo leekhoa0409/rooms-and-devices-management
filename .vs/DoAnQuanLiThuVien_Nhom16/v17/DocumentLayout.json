@@ -1,12 +1,103 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6322C52C-4551-462A-BC7A-015FABCBE0A8}|DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\leekhoa\\desktop\\rooms-and-devices-management\\dataaccesslayer\\roomdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6322C52C-4551-462A-BC7A-015FABCBE0A8}|DataAccessLayer\\DataAccessLayer.csproj|solutionrelative:dataaccesslayer\\roomdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D654CA7-EAD2-4F6E-92CC-93795E9F2248}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\leekhoa\\desktop\\rooms-and-devices-management\\presentationlayer\\warrantypresentation\\createwarrantyrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D654CA7-EAD2-4F6E-92CC-93795E9F2248}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\warrantypresentation\\createwarrantyrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D654CA7-EAD2-4F6E-92CC-93795E9F2248}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\leekhoa\\desktop\\rooms-and-devices-management\\presentationlayer\\warrantypresentation\\createwarrantyrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7D654CA7-EAD2-4F6E-92CC-93795E9F2248}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\warrantypresentation\\createwarrantyrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D654CA7-EAD2-4F6E-92CC-93795E9F2248}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\leekhoa\\desktop\\rooms-and-devices-management\\presentationlayer\\warrantypresentation\\warrantyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D654CA7-EAD2-4F6E-92CC-93795E9F2248}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\warrantypresentation\\warrantyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D654CA7-EAD2-4F6E-92CC-93795E9F2248}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\leekhoa\\desktop\\rooms-and-devices-management\\presentationlayer\\warrantypresentation\\warrantyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7D654CA7-EAD2-4F6E-92CC-93795E9F2248}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\warrantypresentation\\warrantyform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomDAL.cs",
+              "DocumentMoniker": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\DataAccessLayer\\RoomDAL.cs",
+              "RelativeDocumentMoniker": "DataAccessLayer\\RoomDAL.cs",
+              "ToolTip": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\DataAccessLayer\\RoomDAL.cs",
+              "RelativeToolTip": "DataAccessLayer\\RoomDAL.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAnwFQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T15:23:20.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateWarrantyRequest.cs",
+              "DocumentMoniker": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\PresentationLayer\\WarrantyPresentation\\CreateWarrantyRequest.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\WarrantyPresentation\\CreateWarrantyRequest.cs",
+              "ToolTip": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\PresentationLayer\\WarrantyPresentation\\CreateWarrantyRequest.cs",
+              "RelativeToolTip": "PresentationLayer\\WarrantyPresentation\\CreateWarrantyRequest.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAF8AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T15:15:00.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateWarrantyRequest.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\PresentationLayer\\WarrantyPresentation\\CreateWarrantyRequest.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\WarrantyPresentation\\CreateWarrantyRequest.cs",
+              "ToolTip": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\PresentationLayer\\WarrantyPresentation\\CreateWarrantyRequest.cs [Design]",
+              "RelativeToolTip": "PresentationLayer\\WarrantyPresentation\\CreateWarrantyRequest.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T15:14:57.859Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WarrantyForm.cs",
+              "DocumentMoniker": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\PresentationLayer\\WarrantyPresentation\\WarrantyForm.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\WarrantyPresentation\\WarrantyForm.cs",
+              "ToolTip": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\PresentationLayer\\WarrantyPresentation\\WarrantyForm.cs",
+              "RelativeToolTip": "PresentationLayer\\WarrantyPresentation\\WarrantyForm.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAvwJgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T15:09:37.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WarrantyForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\PresentationLayer\\WarrantyPresentation\\WarrantyForm.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\WarrantyPresentation\\WarrantyForm.cs",
+              "ToolTip": "C:\\Users\\LeeKhoa\\Desktop\\rooms-and-devices-management\\PresentationLayer\\WarrantyPresentation\\WarrantyForm.cs [Design]",
+              "RelativeToolTip": "PresentationLayer\\WarrantyPresentation\\WarrantyForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T14:53:01.449Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

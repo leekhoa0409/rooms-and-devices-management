@@ -41,7 +41,6 @@ namespace PresentationLayer.AccoutPresentation
                     MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
-
         private void btnDoiMK_Click(object sender, EventArgs e)
         {
 

@@ -34,46 +34,22 @@ namespace PresentationLayer
                 return;
             }
 
-            // --- Lấy user hiện tại trong DB
-            string currentDbUser = userBLL.GetCurrentDBUser();
-
-            // --- Lấy role thật trong DB
-            DataTable dtRole = userBLL.GetCurrentRole();
-            string dbRole = "";
-            if (dtRole != null && dtRole.Rows.Count > 0)
-            {
-                dbRole = dtRole.Rows[0]["DbRole"].ToString();
-            }
-
-            // --- Lấy role trong ứng dụng (bảng Users)
             DataRow row = dtUser.Rows[0];
-            string appRole = row["VaiTro"].ToString();
-            string appUser = row["TenTK"].ToString();
+            string appRole = row["VaiTro"].ToString().Trim();
+            string appUser = row["TenTK"].ToString().Trim();
 
-            // --- Thông báo
-            MessageBox.Show(
-                $"Đăng nhập thành công!\n" +
-                $"AppUser: {appUser} (AppRole: {appRole})\n" +
-                $"DBUser: {currentDbUser} (DbRole: {dbRole})"
-            );
-
-            // --- Lưu vào Session
             Session.currentRole = appRole;
             Session.currentUser = appUser;
-
             // --- Chuyển sang MainForm
             MainForm main = new MainForm();
             this.Hide();
             main.ShowDialog();
             this.Close();
         }
-
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
         }
-
         private void ckbHienMK_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbHienMK.Checked)
@@ -85,13 +61,11 @@ namespace PresentationLayer
                 txtPassword.UseSystemPasswordChar = true;
             }
         }
-
         private void llbTaoTK_Click(object sender, EventArgs e)
         {
             CreateAccountForm f = new CreateAccountForm("login");
             f.ShowDialog();
         }
-
         private void llbTaoTK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 

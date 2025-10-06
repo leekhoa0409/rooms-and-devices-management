@@ -47,9 +47,9 @@ namespace BussinessLogicLayer
         {
             return warrantyDAL.UpdateWarrantyInfo(maBaoTri, ngayBaoTri, chiPhi, donViThucHien, trangThai, ref error);
         }
-        public bool UpdateRequestWarrantyInfo(string maYC, DateTime? ngayYC, string noiDung, string trangThai, string maPhong, string maTB, ref string error) 
+        public bool UpdateRequestWarrantyInfo(string maYC, DateTime ngayYC, string noiDung, string trangThai, ref string error) 
         { 
-            return warrantyDAL.UpdateRequestWarrantyInfo(maYC, ngayYC, noiDung, trangThai, maPhong, maTB, ref error);
+            return warrantyDAL.UpdateRequestWarrantyInfo(maYC, ngayYC, noiDung, trangThai, ref error);
         }
         public int DeleteRoomWarrantyByYears(string soNam)
         {

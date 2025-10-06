@@ -280,7 +280,7 @@ namespace PresentationLayer
             // 
             // cboLoaiPhong
             // 
-            this.cboLoaiPhong.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cboLoaiPhong.BackColor = System.Drawing.Color.Gainsboro;
             this.cboLoaiPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLoaiPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 11F);
@@ -298,7 +298,7 @@ namespace PresentationLayer
             // 
             // cboTinhTrang
             // 
-            this.cboTinhTrang.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cboTinhTrang.BackColor = System.Drawing.Color.Gainsboro;
             this.cboTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTinhTrang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTinhTrang.Font = new System.Drawing.Font("Segoe UI", 11F);

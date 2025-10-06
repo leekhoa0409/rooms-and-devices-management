@@ -32,17 +32,14 @@ namespace BussinessLogicLayer
         {
             return roomDAL.DeleteRoom(ma, ref error);
         }
-
         public DataTable GetRoomById(string ma)
         {
             return roomDAL.GetRoomById(ma);
         }
-
         public DataTable FindRoom(string keyword)
         {
             return roomDAL.FindRoom(keyword);
         }
-
         public DataTable FilterRoom(string loaiPhong, string tinhTrang)
         {
             if (loaiPhong == "Tất cả") loaiPhong = null;
@@ -57,11 +54,6 @@ namespace BussinessLogicLayer
         {
             return roomDAL.GetAllRoomAndDevice();
         }
-        public DataTable GetDevicesByRoomId(string maPhong, string tinhTrang)
-        {
-            return roomDAL.GetDevicesByRoomId(maPhong, tinhTrang);
-        }
-
         public int GetCountRooms()
         {
             return roomDAL.GetCountRooms();

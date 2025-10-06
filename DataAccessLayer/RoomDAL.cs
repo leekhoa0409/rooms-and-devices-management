@@ -15,7 +15,6 @@ namespace DataAccessLayer
         {
             dal = new UtilDAL();
         }
-
         public DataTable GetAllRoom()
         {
             CommandType ct = CommandType.Text;
@@ -87,7 +86,7 @@ namespace DataAccessLayer
         {
             CommandType ct = CommandType.Text;
             SqlParameter[] parameters = {
-                new SqlParameter("@TinhTrang", tinhTrang)
+                new SqlParameter("@TinhTrang", tinhTrang.Trim())
             };
             return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LocPhongTheoTinhTrang(@TinhTrang);", ct, parameters);
         }
@@ -97,16 +96,6 @@ namespace DataAccessLayer
             CommandType ct = CommandType.Text;
             return dal.ExecuteQueryDataTable("SELECT * FROM v_ThongTinChiTietPhongThietBi", ct);
         }
-        public DataTable GetDevicesByRoomId(string maPhong, string tinhTrang)
-        {
-            CommandType ct = CommandType.Text;
-            SqlParameter[] parameters = {
-                new SqlParameter("@MaPhong", maPhong),
-                new SqlParameter("@TinhTrang", (object)tinhTrang ?? DBNull.Value)
-            };
-            return dal.ExecuteQueryDataTable("SELECT * FROM dbo.fn_LayCacThietBiQuaPhong(@MaPhong, @TinhTrang);", ct, parameters);
-        }
-
         public int GetCountRooms()
         {
             CommandType ct = CommandType.Text;

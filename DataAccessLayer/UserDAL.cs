@@ -26,19 +26,6 @@ namespace DataAccessLayer
             };
             return dal.ExecuteQueryDataTable("sp_KiemTraDangNhap", ct, parameters);
         }
-        public string GetCurrentDbUser()
-        {
-            string sql = "SELECT USER_NAME()";
-            object result = dal.ExecuteScalar(sql, CommandType.Text);
-
-            return result != null ? result.ToString() : string.Empty;
-        }
-
-        public DataTable GetCurrentRole()
-        {
-            CommandType ct = CommandType.StoredProcedure;
-            return dal.ExecuteQueryDataTable("sp_XemRole", ct);
-        }
         public DataTable GetAllAccountsInfo()
         {
             CommandType ct = CommandType.StoredProcedure;
@@ -64,16 +51,15 @@ namespace DataAccessLayer
             };
             return dal.ExecuteNonQuery("sp_XoaTaiKhoan", ct, ref error, parameters);
         }
-        public bool UpdateAccount(string username, string password, string role, ref string error)
+        public bool UpdateRoleAccount(string username, string role, ref string error)
         {
             CommandType ct = CommandType.StoredProcedure;
             SqlParameter[] parameters =
             {
                 new SqlParameter("@TenTK", username),
-                new SqlParameter("@MatKhau", (object)password ?? DBNull.Value),
-                new SqlParameter("VaiTro", (object)role ?? DBNull.Value)
+                new SqlParameter("VaiTro", role)
             };
-            return dal.ExecuteNonQuery("sp_SuaTaiKhoan", ct, ref error, parameters);
+            return dal.ExecuteNonQuery("sp_SuaVaiTroTaiKhoan", ct, ref error, parameters);
         }
 
         public DataTable GetAccountInfo(string username)

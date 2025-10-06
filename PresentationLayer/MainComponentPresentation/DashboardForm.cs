@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,13 +30,24 @@ namespace PresentationLayer
         }
         public void LoadDashBoard()
         {
-            LoadChartPhong();
-            LoadChartThietBi();
-        }
-        private void LoadChartPhong()
-        {
-            DataTable dt = analysisBLL.ThongKePhong();
+            bool hasPhong = LoadChartPhong();
+            bool hasThietBi = LoadChartThietBi();
 
+            if (!hasPhong && !hasThietBi)
+            {
+                lblThongBao.Text = "Chưa có dữ liệu thống kê";
+                tblChart.Visible = false;
+            }
+            else
+            {
+                lblThongBao.Text = "Thống kê phòng và thiết bị";
+                tblChart.Visible = true;
+            }
+        }
+        private bool LoadChartPhong()
+        {   
+            DataTable dt = analysisBLL.ThongKePhong();
+            if (dt == null || dt.Rows.Count == 0) return false;
             chartPhong.Series.Clear();
             chartPhong.ChartAreas[0].Area3DStyle.Enable3D = true;
 
@@ -64,12 +76,14 @@ namespace PresentationLayer
             legend.Docking = Docking.Right;
             legend.Alignment = StringAlignment.Center;
             chartPhong.Legends.Add(legend);
+            return true;
         }
 
 
-        public void LoadChartThietBi()
+        public bool LoadChartThietBi()
         {
             DataTable dt = analysisBLL.ThongKeThietBi();
+            if (dt == null || dt.Rows.Count == 0) return false;
             chartThietBi.Series.Clear();
             chartThietBi.ChartAreas[0].AxisX.Title = "Tình trạng thiết bị";
             chartThietBi.ChartAreas[0].AxisY.Title = "Số lượng";
@@ -108,6 +122,7 @@ namespace PresentationLayer
             Legend legend = new Legend("Legend1");
             legend.Docking = Docking.Bottom;
             chartThietBi.Legends.Add(legend);
+            return true;
         }
 
         private void btnPage2_Click(object sender, EventArgs e)

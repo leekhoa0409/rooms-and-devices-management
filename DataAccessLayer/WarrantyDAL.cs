@@ -78,23 +78,18 @@ namespace DataAccessLayer
                 new SqlParameter("@NgayBT", (object)ngayBaoTri ?? DBNull.Value),
                 new SqlParameter("@ChiPhi", (object)chiPhi ?? DBNull.Value),
                 new SqlParameter("@DonViThucHien", (object)donViThucHien ?? DBNull.Value),
-                new SqlParameter("@TrangThai", (object)trangThai ?? DBNull.Value)
+                new SqlParameter("@TrangThai", trangThai)
             };
             return dal.ExecuteNonQuery("sp_SuaThongTinBaoTri", ct, ref error, parameters);
         }
-        public bool UpdateRequestWarrantyInfo(string maYC, DateTime? ngayYC, string noiDung, string trangThai, string maPhong, string maTB, ref string error)
+        public bool UpdateRequestWarrantyInfo(string maYC, DateTime ngayYC, string noiDung, string trangThai, ref string error)
         {
-            object maPhongValue = string.IsNullOrEmpty(maPhong) ? DBNull.Value : (object)maPhong;
-            object maTBValue = string.IsNullOrEmpty(maTB) ? DBNull.Value : (object)maTB;
-
             CommandType ct = CommandType.StoredProcedure;
             SqlParameter[] parameters = {
                 new SqlParameter("@MaYC", maYC),
                 new SqlParameter("@NgayYC", (object)ngayYC ?? DBNull.Value),
                 new SqlParameter("@NoiDung", (object)noiDung ?? DBNull.Value),
                 new SqlParameter("@TrangThai", trangThai),
-                new SqlParameter("@MaPhong", maPhongValue),
-                new SqlParameter("@MaTB", maTBValue)
             };
             return dal.ExecuteNonQuery("sp_SuaThongTinYeuCauBaoTri", ct, ref error, parameters);
         }

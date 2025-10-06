@@ -26,7 +26,7 @@ namespace PresentationLayer
         private void CreateWarrantyRequest_Load(object sender, EventArgs e)
         {
             txtTaiKhoan.Text = Session.currentUser;
-            cboTinhTrang.SelectedIndex = 3;
+            cboTinhTrang.SelectedIndex = 0;
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -76,32 +76,12 @@ namespace PresentationLayer
         }
         private void cboPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboPhong.SelectedValue == null || cboPhong.SelectedValue is DataRowView) return;
 
-            string maPhong = cboPhong.SelectedValue.ToString();
-            string tinhTrang = cboTinhTrang.SelectedItem.ToString();
-            if (tinhTrang == "Tất cả") tinhTrang = null;
-            RoomBLL roomBLL = new RoomBLL();
-            DataTable dt = roomBLL.GetDevicesByRoomId(maPhong, tinhTrang);
-
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                cboThietBi.DataSource = dt;
-                cboThietBi.DisplayMember = "TenTB";
-                cboThietBi.ValueMember = "MaTB";
-            }
-            else
-            {
-                cboThietBi.DataSource = null;
-            }
-            cboThietBi.SelectedIndex = -1;
         }
 
         private void cboTinhTrang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string tinhTrang = cboTinhTrang.Text;
-            if (tinhTrang == null) return;
-
+            string tinhTrang = cboTinhTrang.Text.ToString();
             RoomBLL roomBLL = new RoomBLL();
             DeviceBLL deviceBLL = new DeviceBLL();
             DataTable dtPhong;
@@ -116,7 +96,8 @@ namespace PresentationLayer
                 dtPhong = roomBLL.FilterRoomByStatus(tinhTrang);
                 dtThietBi = deviceBLL.FilterDeviceByStatus(tinhTrang);
             }
-
+            cboPhong.DataSource = null;
+            cboThietBi.DataSource = null;
             cboPhong.DataSource = dtPhong;
             cboPhong.DisplayMember = "TenPhong";
             cboPhong.ValueMember = "MaPhong";
@@ -126,6 +107,25 @@ namespace PresentationLayer
             cboThietBi.DisplayMember = "TenTB";
             cboThietBi.ValueMember = "MaTB";
             cboThietBi.SelectedIndex = -1;
+        }
+
+        private void cboThietBi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboThietBi.SelectedValue == null || cboThietBi.SelectedValue is DataRowView) return;
+            string maTB = cboThietBi.SelectedValue.ToString();
+            DeviceBLL deviceBLL = new DeviceBLL();
+            DataTable dt = deviceBLL.GetRoomByDeviceId(maTB);
+            if (dt != null || dt.Rows.Count > 0)
+            {
+                cboPhong.DataSource= dt;
+                cboPhong.ValueMember = "MaPhong";
+                cboPhong.DisplayMember = "TenPhong";
+            }
+            else
+            {
+                cboPhong.DataSource = null;
+            }
+            cboPhong.SelectedIndex = -1;
         }
     }
 }

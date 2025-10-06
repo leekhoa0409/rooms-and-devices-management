@@ -20,7 +20,6 @@ namespace PresentationLayer.AccoutPresentation
             InitializeComponent();
             this.userBLL = new UserBLL();
         }
-
         private void AccountManagement_Load(object sender, EventArgs e)
         {
             LoadAccoutsInfo();
@@ -30,7 +29,6 @@ namespace PresentationLayer.AccoutPresentation
             DataTable dt = userBLL.GetAllAccountsInfo();
             dgvTaiKhoan.DataSource = dt;
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             CreateAccountForm f = new CreateAccountForm();
@@ -80,7 +78,7 @@ namespace PresentationLayer.AccoutPresentation
             if (result == DialogResult.Yes)
             {
                 string error = "";
-                bool updated = userBLL.UpdateAccount(tenTK, null, vaiTro, ref error);
+                bool updated = userBLL.UpdateRoleAccount(tenTK, vaiTro, ref error);
                 if (updated)
                 {
                     MessageBox.Show("Cập nhật vai trò của tài khoản thành công!");

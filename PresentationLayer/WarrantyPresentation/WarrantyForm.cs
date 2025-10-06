@@ -28,18 +28,8 @@ namespace PresentationLayer
 
         private void WarrantyForm_Load(object sender, EventArgs e)
         {
-            DataTable dtPhong = roomBLL.GetAllRoom();
-            cboPhong.DataSource = dtPhong;
-            cboPhong.DisplayMember = "TenPhong";
-            cboPhong.ValueMember = "MaPhong";
-            cboPhong.SelectedIndex = -1;
-
-            DataTable dtThietBi = deviceBLL.GetAllDevices();
-            cboThietBi.DataSource = dtThietBi;
-            cboThietBi.DisplayMember = "TenTB";
-            cboThietBi.ValueMember = "MaTB";
-            cboThietBi.SelectedIndex = -1;
-            cboLocTrangThai.SelectedIndex = 0;
+            LoadRequestWarranty();
+            cboLocTrangThai.SelectedIndex = -1;
             if (dgvYeuCauBaoTri.Rows.Count == 0)
             {
                 btnTuChoi.Enabled = false;
@@ -172,7 +162,7 @@ namespace PresentationLayer
         {
             string maYC = dgvYeuCauBaoTri.CurrentRow.Cells["MaYC"].Value.ToString();
             DialogResult result = MessageBox.Show(
-                $"Bạn có chắc muốn từ chối yêu cầu bảo trì [{maYC}] không?",
+                $"Bạn có chắc muốn từ chối yêu cầu bảo trì {maYC} không?",
                 "Xác nhận",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
@@ -202,13 +192,20 @@ namespace PresentationLayer
 
                 txtTaiKhoan.Text = row.Cells["TenTK"].Value?.ToString();
                 dtpNgayYC.Format = DateTimePickerFormat.Short;
-                dtpNgayYC.CustomFormat = null;
                 dtpNgayYC.Value = Convert.ToDateTime(row.Cells["NgayYC"].Value);
                 txtNoiDung.Text = row.Cells["NoiDung"].Value?.ToString();
                 cboChonTrangThai.Text = row.Cells["TrangThai"].Value?.ToString();
-                cboPhong.SelectedValue = row.Cells["MaPhong"].Value?.ToString();
-                cboThietBi.SelectedValue = row.Cells["MaTB"].Value?.ToString();
-                string trangThai = row.Cells["TrangThai"].Value?.ToString();
+
+                if (string.IsNullOrEmpty(row.Cells["MaPhong"].Value?.ToString()))
+                {
+                    txtPhong.Text = row.Cells["MaPhongThietBi"].Value?.ToString();
+                }
+                else
+                {
+                    txtPhong.Text = row.Cells["MaPhong"].Value?.ToString();
+                }
+                txtThietBi.Text = row.Cells["MaTB"].Value?.ToString();
+                string trangThai = row.Cells["TrangThai"].Value?.ToString().Trim();
                 
                 if (trangThai != "Đang xử lý")
                 {
@@ -229,7 +226,7 @@ namespace PresentationLayer
             string maYC = dgvYeuCauBaoTri.CurrentRow.Cells["MaYC"].Value.ToString();
 
             DialogResult result = MessageBox.Show(
-                $"Bạn có chắc muốn phê duyệt yêu cầu bảo trì [{maYC}] không?",
+                $"Bạn có chắc muốn phê duyệt yêu cầu bảo trì {maYC} không?",
                 "Xác nhận",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
@@ -253,49 +250,40 @@ namespace PresentationLayer
 
         private void btnSuaYeuCau_Click(object sender, EventArgs e)
         {
-            string error = "";
-            string maYC = null;
-            if (dgvYeuCauBaoTri != null && dgvYeuCauBaoTri.Rows.Count > 0)
-            {
-                maYC = dgvYeuCauBaoTri.CurrentRow.Cells["MaYC"].Value?.ToString();
-            }
-            else
+            if (dgvYeuCauBaoTri == null || dgvYeuCauBaoTri.Rows.Count == 0)
             {
                 return;
             }
-                DateTime? ngayYC = null;
-            if (dtpNgayYC.CustomFormat != " ")
+            string maYC = dgvYeuCauBaoTri.CurrentRow?.Cells["MaYC"].Value?.ToString();
+            if (string.IsNullOrEmpty(maYC))
             {
-                ngayYC = dtpNgayYC.Value;
+                MessageBox.Show("Vui lòng chọn một yêu cầu bảo trì để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            DateTime ngayYC = dtpNgayYC.Value;
             string noiDung = txtNoiDung.Text;
             string trangThai = cboChonTrangThai.Text;
-
-            // Lấy mã phòng (có thể null)
-            string maPhongStr = null;
-            object maPhongValue = cboPhong.SelectedValue;
-            if (maPhongValue != null && maPhongValue != DBNull.Value)
+            string error = "";
+            DialogResult confirm = MessageBox.Show(
+                "Bạn có chắc chắn muốn sửa thông tin yêu cầu bảo trì này không?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            if (confirm == DialogResult.Yes)
             {
-                maPhongStr = maPhongValue.ToString();
-            }
 
-            // Lấy mã thiết bị (có thể null)
-            string maTBStr = null;
-            if (cboThietBi.SelectedValue != null && cboThietBi.SelectedValue != DBNull.Value)
-            {
-                maTBStr = cboThietBi.SelectedValue.ToString();
-            }
+                bool updated = warrantyBLL.UpdateRequestWarrantyInfo(maYC, ngayYC, noiDung, trangThai, ref error);
 
-            bool updated = warrantyBLL.UpdateRequestWarrantyInfo(maYC, ngayYC, noiDung, trangThai, maPhongStr, maTBStr, ref error);
-
-            if (updated)
-            {
-                MessageBox.Show("Sửa thông tin yêu cầu bảo trì thành công!");
-                LoadRequestWarranty();
-            }
-            else
-            {
-                MessageBox.Show("Lỗi sửa thông tin: " + error);
+                if (updated)
+                {
+                    MessageBox.Show("Sửa thông tin yêu cầu bảo trì thành công!");
+                    LoadRequestWarranty();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi sửa thông tin: " + error);
+                }
             }
         }
 
@@ -457,9 +445,9 @@ namespace PresentationLayer
             dtpNgayYC.Format = DateTimePickerFormat.Custom;
             dtpNgayYC.CustomFormat = " ";
             txtNoiDung.Text = null;
+            txtPhong.Text = null;
+            txtThietBi.Text = null;
             cboChonTrangThai.Text = null;
-            cboPhong.SelectedIndex = -1;
-            cboThietBi.SelectedIndex = -1;
             cboChonTrangThai.SelectedIndex = -1;
             cboLocTrangThai.SelectedIndex = -1;
         }

@@ -67,5 +67,10 @@ namespace BussinessLogicLayer
         {
             return deviceDAL.GetCountDevices();
         }
+
+        public DataTable GetRoomByDeviceId(string maTB)
+        {
+            return deviceDAL.GetRoomByDeviceId(maTB);
+        }
     }
 }

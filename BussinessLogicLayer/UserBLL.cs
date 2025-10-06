@@ -21,14 +21,6 @@ namespace BussinessLogicLayer
         {
             return utilDAL.CreateConnectionString(username, passwd);
         }
-        public string GetCurrentDBUser()
-        {
-            return userDAL.GetCurrentDbUser();
-        }
-        public DataTable GetCurrentRole()
-        {
-            return userDAL.GetCurrentRole();
-        }
         public DataTable GetAllAccountsInfo()
         {
             return userDAL.GetAllAccountsInfo();
@@ -41,11 +33,10 @@ namespace BussinessLogicLayer
         {
             return userDAL.DeleteAccount(username, ref error);
         }
-        public bool UpdateAccount(string username, string password, string role, ref string error)
+        public bool UpdateRoleAccount(string username, string role, ref string error)
         {
-            return userDAL.UpdateAccount(username, password, role, ref error);
+            return userDAL.UpdateRoleAccount(username, role, ref error);
         }
-
         public DataTable GetAccountInfo(string username)
         {
             return userDAL.GetAccountInfo(username);

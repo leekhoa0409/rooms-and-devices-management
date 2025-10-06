@@ -146,7 +146,7 @@
             this.cboLoaiTB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLoaiTB.FormattingEnabled = true;
             this.cboLoaiTB.Items.AddRange(new object[] {
-            "Chiếu",
+            "Máy chiếu",
             "Mạng",
             "Công nghệ",
             "Âm thanh",

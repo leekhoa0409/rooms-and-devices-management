@@ -28,33 +28,7 @@ namespace PresentationLayer.AccoutPresentation
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMatKhau.Text) || string.IsNullOrEmpty(txtNhapLaiMK.Text))
-            {
-                MessageBox.Show("Vui lòng nhập mật khẩu mới");
-                return;
-            }
-            string tenTK = txtTenTK.Text;
-            string matKhau = txtMatKhau.Text;
-            string matKhau2 = txtNhapLaiMK.Text;
-            string error = "";
-            if (matKhau == matKhau2)
-            {
-                bool updated = userBLL.UpdateAccount(tenTK, matKhau, null, ref error);
-                if (updated)
-                {
-                    MessageBox.Show("Tạo tài khoản mới thành công!");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi khi tạo tài khoản: " + error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Mật khẩu mới không khớp, vui lòng thử lại!");
-            }
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

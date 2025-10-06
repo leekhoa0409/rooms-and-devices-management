@@ -13,15 +13,24 @@ namespace PresentationLayer
     public partial class MainForm : Form
     {
         private AnalysisBLL analysisBLL = new AnalysisBLL();
-
         public MainForm()
         {
             InitializeComponent();
         }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (Session.currentRole == "UserRole")
+            if (Session.currentRole == "AdminRole")
+            {
+                LoadForm(new DashboardForm(this));
+                btnDB.Visible = true;
+                btnPhong.Visible = true;
+                btnThietBi.Visible = true;
+                btnBT.Visible = true;
+                btnTK.Visible = true;
+
+                btnTYCBT.Visible = false;
+            }
+            else if (Session.currentRole == "UserRole")
             {
                 // Ẩn các nút chỉ dành cho admin
                 btnDB.Visible = false;
@@ -31,16 +40,6 @@ namespace PresentationLayer
                 // Chỉ hiện nút tạo yêu cầu bảo trì
                 btnTK.Visible = true;
                 btnTYCBT.Visible = true;
-            }
-            else if (Session.currentRole == "AdminRole" || Session.currentRole == "ManagerRole")
-            {
-                LoadForm(new DashboardForm(this));
-                btnDB.Visible = true;
-                btnPhong.Visible = true;
-                btnThietBi.Visible = true;
-                btnBT.Visible = true;
-                btnTK.Visible = true;
-                btnTYCBT.Visible = false;
             }
         }
         public void LoadForm(Form form)
@@ -52,8 +51,6 @@ namespace PresentationLayer
             panelMain.Controls.Add(form);
             form.Show();
         }
-
-        
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -68,28 +65,23 @@ namespace PresentationLayer
         {
             LoadForm(new DashboardForm(this));
         }
-
         private void btnPhong_Click(object sender, EventArgs e)
         {
             LoadForm(new RoomManagementForm());
         }
-
         private void btnThietBi_Click(object sender, EventArgs e)
         {
             LoadForm(new DeviceManagementForm());
         }
-
         private void btnBT_Click(object sender, EventArgs e)
         {
             LoadForm(new WarrantyForm());
         }
-
         private void btnTK_Click(object sender, EventArgs e)
         {
             if (Session.currentRole == "AdminRole") LoadForm(new AccountManagement());
             else LoadForm(new AccountInfoForm());
         }
-
         private void btnTYCBT_Click(object sender, EventArgs e)
         {
             LoadForm(new UserCreateRequestForm());

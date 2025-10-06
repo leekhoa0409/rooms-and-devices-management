@@ -160,57 +160,57 @@
         //}
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.tblChart = new System.Windows.Forms.TableLayoutPanel();
             this.chartBaoTri = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartChiPhiBaoTri = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cboNam = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbLoc = new System.Windows.Forms.Label();
             this.btnPage2 = new System.Windows.Forms.Button();
             this.btnPage1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.lblThongBao = new System.Windows.Forms.Label();
+            this.tblChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartBaoTri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartChiPhiBaoTri)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tblChart
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.chartBaoTri, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.chartChiPhiBaoTri, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1091, 520);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tblChart.BackColor = System.Drawing.Color.White;
+            this.tblChart.ColumnCount = 2;
+            this.tblChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblChart.Controls.Add(this.chartBaoTri, 0, 0);
+            this.tblChart.Controls.Add(this.chartChiPhiBaoTri, 1, 0);
+            this.tblChart.Location = new System.Drawing.Point(4, 70);
+            this.tblChart.Name = "tblChart";
+            this.tblChart.RowCount = 1;
+            this.tblChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblChart.Size = new System.Drawing.Size(1091, 520);
+            this.tblChart.TabIndex = 0;
             // 
             // chartBaoTri
             // 
             this.chartBaoTri.BorderlineColor = System.Drawing.Color.Black;
             this.chartBaoTri.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chartBaoTri.BorderlineWidth = 2;
-            chartArea5.Name = "ChartArea1";
-            this.chartBaoTri.ChartAreas.Add(chartArea5);
+            chartArea3.Name = "ChartArea1";
+            this.chartBaoTri.ChartAreas.Add(chartArea3);
             this.chartBaoTri.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Name = "Legend1";
-            this.chartBaoTri.Legends.Add(legend5);
+            legend3.Name = "Legend1";
+            this.chartBaoTri.Legends.Add(legend3);
             this.chartBaoTri.Location = new System.Drawing.Point(3, 3);
             this.chartBaoTri.Name = "chartBaoTri";
             this.chartBaoTri.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartBaoTri.Series.Add(series5);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartBaoTri.Series.Add(series3);
             this.chartBaoTri.Size = new System.Drawing.Size(539, 514);
             this.chartBaoTri.TabIndex = 3;
             this.chartBaoTri.Text = "Tần suất bảo trì";
@@ -220,18 +220,18 @@
             this.chartChiPhiBaoTri.BorderlineColor = System.Drawing.Color.Black;
             this.chartChiPhiBaoTri.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chartChiPhiBaoTri.BorderlineWidth = 2;
-            chartArea6.Name = "ChartArea1";
-            this.chartChiPhiBaoTri.ChartAreas.Add(chartArea6);
+            chartArea4.Name = "ChartArea1";
+            this.chartChiPhiBaoTri.ChartAreas.Add(chartArea4);
             this.chartChiPhiBaoTri.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "Legend1";
-            this.chartChiPhiBaoTri.Legends.Add(legend6);
+            legend4.Name = "Legend1";
+            this.chartChiPhiBaoTri.Legends.Add(legend4);
             this.chartChiPhiBaoTri.Location = new System.Drawing.Point(548, 3);
             this.chartChiPhiBaoTri.Name = "chartChiPhiBaoTri";
             this.chartChiPhiBaoTri.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartChiPhiBaoTri.Series.Add(series6);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartChiPhiBaoTri.Series.Add(series4);
             this.chartChiPhiBaoTri.Size = new System.Drawing.Size(540, 514);
             this.chartChiPhiBaoTri.TabIndex = 4;
             this.chartChiPhiBaoTri.Text = "Chi phí bảo trì";
@@ -243,21 +243,21 @@
             this.cboNam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboNam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNam.FormattingEnabled = true;
-            this.cboNam.Location = new System.Drawing.Point(153, 541);
+            this.cboNam.Location = new System.Drawing.Point(145, 624);
             this.cboNam.Name = "cboNam";
             this.cboNam.Size = new System.Drawing.Size(180, 25);
             this.cboNam.TabIndex = 1;
             this.cboNam.SelectedIndexChanged += new System.EventHandler(this.cboNam_SelectedIndexChanged);
             // 
-            // label1
+            // lbLoc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 544);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "📅 Lọc theo năm:";
+            this.lbLoc.AutoSize = true;
+            this.lbLoc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoc.Location = new System.Drawing.Point(4, 627);
+            this.lbLoc.Name = "lbLoc";
+            this.lbLoc.Size = new System.Drawing.Size(118, 17);
+            this.lbLoc.TabIndex = 2;
+            this.lbLoc.Text = "📅 Lọc theo năm:";
             // 
             // btnPage2
             // 
@@ -269,7 +269,7 @@
             this.btnPage2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPage2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnPage2.Location = new System.Drawing.Point(545, 550);
+            this.btnPage2.Location = new System.Drawing.Point(552, 619);
             this.btnPage2.Name = "btnPage2";
             this.btnPage2.Size = new System.Drawing.Size(35, 35);
             this.btnPage2.TabIndex = 6;
@@ -289,7 +289,7 @@
             this.btnPage1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPage1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.btnPage1.Location = new System.Drawing.Point(500, 550);
+            this.btnPage1.Location = new System.Drawing.Point(511, 619);
             this.btnPage1.Name = "btnPage1";
             this.btnPage1.Size = new System.Drawing.Size(35, 35);
             this.btnPage1.TabIndex = 5;
@@ -299,6 +299,18 @@
             this.btnPage1.MouseEnter += new System.EventHandler(this.btnPage_MouseEnter);
             this.btnPage1.MouseLeave += new System.EventHandler(this.btnPage_MouseLeave);
             // 
+            // lblThongBao
+            // 
+            this.lblThongBao.AutoSize = true;
+            this.lblThongBao.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThongBao.ForeColor = System.Drawing.Color.Black;
+            this.lblThongBao.Location = new System.Drawing.Point(12, 9);
+            this.lblThongBao.Name = "lblThongBao";
+            this.lblThongBao.Size = new System.Drawing.Size(91, 45);
+            this.lblThongBao.TabIndex = 8;
+            this.lblThongBao.Text = "Title";
+            this.lblThongBao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // DashboardFormPage2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,17 +318,18 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1091, 681);
             this.ControlBox = false;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.lblThongBao);
+            this.Controls.Add(this.tblChart);
             this.Controls.Add(this.btnPage2);
             this.Controls.Add(this.btnPage1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbLoc);
             this.Controls.Add(this.cboNam);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashboardFormPage2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashboardFormPage2";
             this.Load += new System.EventHandler(this.DashboardFormPage2_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tblChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartBaoTri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartChiPhiBaoTri)).EndInit();
             this.ResumeLayout(false);
@@ -326,12 +339,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tblChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartBaoTri;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartChiPhiBaoTri;
         private System.Windows.Forms.ComboBox cboNam;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbLoc;
         private System.Windows.Forms.Button btnPage2;
         private System.Windows.Forms.Button btnPage1;
+        private System.Windows.Forms.Label lblThongBao;
     }
 }

@@ -39,8 +39,8 @@ namespace PresentationLayer.AccoutPresentation
                 MessageBox.Show("Vui lòng thêm vai trò cho tài khoản trước khi tạo!");
                 return;
             }
-            string tenTK = txtTenTK.Text;
-            string matKhau = txtMatKhau.Text;
+            string tenTK = txtTenTK.Text.Trim();
+            string matKhau = txtMatKhau.Text.Trim();
             string vaiTro = cboVaiTro.SelectedItem.ToString();
             string error = "";
             bool created = userBLL.CreateAccount(tenTK, matKhau, vaiTro, ref error);

@@ -25,7 +25,7 @@ namespace PresentationLayer
         }
         private void RoomInsertUpdateForm_Load(object sender, EventArgs e)
         {
-            if (maPhong != "")
+            if (!string.IsNullOrEmpty(maPhong))
             {
                 DataTable dt = roomBLL.GetRoomById(maPhong);
                 if (dt != null && dt.Rows.Count > 0)

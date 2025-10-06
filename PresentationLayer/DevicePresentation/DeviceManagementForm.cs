@@ -25,13 +25,13 @@ namespace PresentationLayer
         {
             LoadDevices();
             cboTinhTrang.SelectedIndex = 0;
-            lbThietBi.Text = deviceBLL.GetCountDevices().ToString();
         }
 
         private void LoadDevices()
         {
             DataTable dt = deviceBLL.GetAllDevices();
             dgvThietBi.DataSource = dt;
+            lbThietBi.Text = deviceBLL.GetCountDevices().ToString();
         }
         private void FilterDevices()
         {
